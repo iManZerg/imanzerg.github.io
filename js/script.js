@@ -1,18 +1,14 @@
-//hamburger
-const hamburger = document.querySelector('.hamburger');
-const adaptiveMenu = document.querySelector('.adaptive-menu');
-const navList = document.querySelector('.nav-ul');
+window.onload = function () {
+    fetch("https://ipinfo.io/json?token=e808a723ebcba7").then(
+        (response) => response.json()
+    ).then(
+        (jsonResponse) => {
+            document.getElementById("city").innerHTML = jsonResponse.city;
+            document.getElementById("region").innerHTML = jsonResponse.region;
+            document.getElementById("country").innerHTML = jsonResponse.country;
+        }
 
-function toggleMenu() {
-    adaptiveMenu.classList.toggle('is-open');
+    )
 }
 
-hamburger.addEventListener('click', toggleMenu);
-
-function closeMenu(event) {
-    if (event.target.classList.contains('nav-link')) {
-        adaptiveMenu.classList.remove('is-open');
-    }
-}
-
-navList.addEventListener('click', closeMenu);
+// (jsonResponse) => console.log(jsonResponse.ip, jsonResponse.country, jsonResponse.region, jsonResponse.city)

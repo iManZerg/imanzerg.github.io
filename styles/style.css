@@ -2,9 +2,10 @@
   font-family: "Wulkan Display";
   src: url("../assets/fonts/WulkanDisplayLight.woff2") format("woff2"), url("../assets/fonts/WulkanDisplayLight.woff") format("woff");
 }
+
 * {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
@@ -21,239 +22,17 @@ body {
   font-family: "Manrope", sans-serif;
   color: white;
 }
-@media (max-width: 1366px) {
-  body {
-    overflow-x: hidden;
-  }
-}
-
-a {
-  text-decoration: none;
-}
 
 .container {
-  margin: 0 auto;
-  width: 480px;
-  background-color: #393D46;
-  overflow-x: hidden;
-}
-
-.header {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 100%;
-  height: 100px;
-  background-color: #393D46;
-  color: #E89E2C;
-  font-weight: bold;
-}
-.header h2,
-.header h3,
-.header h4 {
-  margin: 0;
-  padding: 0;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  word-spacing: 6px;
-}
-.header h3 {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding-top: 50px;
   color: white;
 }
 
-.prices {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  width: 100%;
-  padding: 25px 10px;
-  gap: 10px;
-}
-.prices .price {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 49%;
-  background-color: white;
-  height: 80px;
-  border-radius: 35px;
-}
-.prices .price .price-text {
-  font-size: 16px;
-}
-.prices .price .price-price {
-  font-weight: bold;
-  font-size: 23px;
-}
-.prices .ordinary {
-  color: #393D46;
-}
-.prices .ordinary .price-price {
-  text-decoration: line-through;
-}
-.prices .today {
-  background: #E89E2C;
-}
-
-.group-img {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  width: 100%;
-  padding: 15px 0;
-}
-.group-img .my-img {
-  width: 30%;
-}
-
-.complectation {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-.complectation .complectation-items {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  gap: 7px;
-}
-.complectation .complectation-items .complectation-item {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 10px;
-  font-size: 20px;
-}
-
-.description {
-  padding: 40px 0;
-}
-.description .my-img {
-  width: 100%;
-  height: 400px;
-}
-.description .description-text {
-  padding: 20px;
-  font-size: 20px;
-  letter-spacing: 1px;
-}
-
-.video-rewiew {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-.video-rewiew h3 {
-  color: #E89E2C;
-}
-
-.characteristics {
-  padding: 20px;
-  font-size: 20px;
-  letter-spacing: 1px;
-}
-.characteristics span {
-  font-weight: bold;
-}
-
-.comment {
-  width: 100%;
-}
-.comment img {
-  width: 100%;
-}
-
-.form-email {
-  padding: 30px;
-}
-.form-email h1 {
-  color: #E89E2C;
-}
-.form-email form {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  gap: 15px;
-}
-.form-email form input {
-  width: 100%;
-  height: 50px;
-  font-size: 25px;
-  padding: 0 10px;
-}
-.form-email form .btn-submit {
-  height: 60px;
-  width: 60%;
-  border-radius: 35px;
-  border: none;
-  margin-left: auto;
-  margin-top: 25px;
-  background-color: #E89E2C;
-  font-size: 20px;
-}
-.form-email form .btn-submit:hover {
-  cursor: pointer;
-  background-color: #d1a25b;
+span {
+  color: orange;
 }

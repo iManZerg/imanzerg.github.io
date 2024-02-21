@@ -137,8 +137,8 @@ header {
 }
 
 /******section-2************/
-
-.section-2 {}
+/* 
+.section-2 {} */
 
 .section-2_img {
   margin-top: 50px;
@@ -311,7 +311,7 @@ header {
 
   /******section-2************/
 
-  .section-2 {}
+  /* .section-2 {} */
 
   .section-2_img {
     margin-top: 0px;

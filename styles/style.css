@@ -367,6 +367,7 @@ header {
   }
 
   .btn-items {
+    width: 100%;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -378,7 +379,7 @@ header {
   .btn-small {
     font-weight: bold;
     font-size: 16px;
-    padding: 0 15px;
+    padding: 0px;
     height: 45px;
   }
 

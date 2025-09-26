@@ -1,0 +1,1120 @@
+$primary-color: #2a247d;
+$btn-gradient: linear-gradient(90deg, #2E2B75, #5650DB);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Arsenal", sans-serif;
+    color: #222;
+    background: #FDFDFF;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header */
+.header {
+    display: flex;
+    align-items: center;
+    background: $primary-color;
+    color: #fff;
+    padding: 10px 0;
+    height: 108px;
+
+    .header__inner {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        .header__logos {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: 108px;
+
+            .logo1 {
+                max-width: 108px;
+            }
+
+            .logo2 {
+                max-width: 124px;
+            }
+        }
+
+    }
+
+    .nav__list {
+        display: flex;
+        gap: 20px;
+        list-style: none;
+
+        a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 400;
+            font-family: "Arsenal", sans-serif;
+            font-size: 16px;
+
+            &:hover {
+                // text-decoration: underline;
+            }
+        }
+    }
+
+    /* Бургер */
+    .burger {
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 25px;
+        height: 20px;
+        cursor: pointer;
+        z-index: 1001;
+
+        span {
+            display: block;
+            height: 3px;
+            width: 100%;
+            background: #fff;
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+
+        &.active span:nth-child(1) {
+            transform: rotate(45deg) translateY(8px);
+        }
+
+        &.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        &.active span:nth-child(3) {
+            transform: rotate(-45deg) translateY(-8px);
+        }
+    }
+
+    /* Навігація */
+    .nav {
+        .nav__list {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+    }
+
+    /* Мобільна адаптація */
+    @media (max-width: 768px) {
+        .burger {
+            display: flex;
+        }
+
+        .nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 70%;
+            height: 100vh;
+            background: $primary-color;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+            z-index: 1000;
+
+            .nav__list {
+                flex-direction: column;
+                gap: 30px;
+                text-align: center;
+            }
+
+            &.active {
+                right: 0;
+            }
+        }
+    }
+
+}
+
+/* Hero */
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 50px 20px;
+
+    .hero__inner {
+        max-width: 804px;
+
+        .hero__logo {
+            max-width: 200px;
+            margin: 0 auto 20px;
+        }
+
+
+        .hero__subtitle {
+            font-family: "Arsenal", sans-serif;
+            font-size: 24px;
+            font-weight: normal;
+            margin-bottom: 10px;
+            color: $primary-color;
+        }
+
+        .hero__title {
+            font-family: "Playfair Display SC", serif;
+            font-weight: 700;
+            font-style: bold;
+            font-size: 32px;
+            margin-bottom: 50px;
+            color: $primary-color;
+        }
+
+        .hero__text {
+            margin-bottom: 30px;
+            line-height: 1.5;
+            text-align: left;
+
+        }
+    }
+
+
+}
+
+/* Form */
+.form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+
+    .form__group {
+        display: flex;
+        flex-direction: column;
+        color: $primary-color;
+        font-weight: normal;
+        font-size: 14px;
+
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+
+        input {
+            padding: 10px;
+            border: 1px solid #5C5B86;
+            border-radius: 0px;
+            font-size: 14px;
+            width: 392px;
+            height: 50px;
+        }
+
+        .error {
+            color: red;
+            font-size: 12px;
+            margin-top: 4px;
+            height: 14px;
+        }
+    }
+
+    button {
+        width: 210px;
+        height: 55px;
+        background: $btn-gradient;
+        border: none;
+        color: #fff;
+        padding: 14px 34px;
+        font-size: 20px;
+        border-radius: 0px;
+        cursor: pointer;
+        transition: 0.3s;
+        font-family: "Playfair Display SC", serif;
+        font-weight: 700;
+        font-style: bold;
+
+        &:disabled {
+            background: #aaa;
+            cursor: not-allowed;
+        }
+
+        &:hover:enabled {
+            opacity: 0.9;
+        }
+    }
+}
+
+/* Results */
+.results {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    background: #fff;
+    margin-top: 50px;
+    text-align: center;
+
+
+    .results_content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+
+        h2 {
+            color: $primary-color;
+            margin-bottom: 43px;
+            font-family: "Playfair Display SC", serif;
+            font-weight: 700;
+            font-style: bold;
+            font-size: 32px;
+        }
+
+        .results_content_matrix_wrapper {
+            position: relative;
+            // border: 1px solid red;
+            max-width: 663px;
+
+            .results_content_matrix {
+                max-width: 663px;
+                // border: 1px solid green;
+            }
+
+            #resultsContent {
+                position: relative;
+                top: 0;
+
+                .level-1 {
+                    position: absolute;
+                    font-weight: 700;
+                    font-style: bold;
+                    font-size: 20px;
+                }
+
+                .level-2 {
+                    position: absolute;
+                    font-weight: 400;
+                    font-style: normal;
+                    font-size: 20px;
+                }
+
+                .level-3 {
+                    position: absolute;
+                    font-weight: 400;
+                    font-style: normal;
+                    font-size: 16px;
+                }
+
+                .level-4 {
+                    position: absolute;
+                    font-weight: 400;
+                    font-style: normal;
+                    font-size: 16px;
+                }
+
+                /* Перший рівень */
+                #A {
+                    top: 307px;
+                    left: 59px;
+                }
+
+                #B {
+                    top: 60px;
+                    left: 324px;
+                }
+
+                #C {
+                    top: 307px;
+                    left: 583px;
+                }
+
+                #D {
+                    top: 555px;
+                    left: 321px;
+                }
+
+                /* Другий рівень */
+                #E {
+                    top: 126px;
+                    left: 136px;
+                }
+
+                #F {
+                    top: 126px;
+                    left: 510px;
+                }
+
+                #G {
+                    top: 488px;
+                    left: 509px;
+                }
+
+                #H {
+                    top: 488px;
+                    left: 140px;
+                }
+
+                #I {
+                    top: 307px;
+                    left: 325px;
+                }
+
+                /* Третій рівень */
+                #I1 {
+                    top: 346px;
+                    left: 355px;
+                }
+
+                #N {
+                    top: 309px;
+                    left: 510px;
+                }
+
+                #J {
+                    top: 309px;
+                    left: 137px;
+                }
+
+                #O {
+                    top: 438px;
+                    left: 455px;
+                }
+
+                #K {
+                    top: 182px;
+                    left: 194px;
+                }
+
+                #P {
+                    top: 492px;
+                    left: 323px;
+                }
+
+                #L {
+                    top: 128px;
+                    left: 322px;
+                }
+
+                #Q {
+                    top: 438px;
+                    left: 190px;
+                }
+
+                #M {
+                    top: 181px;
+                    left: 454px;
+                }
+
+                #I2 {
+                    top: 346px;
+                    left: 391px;
+                }
+
+                /* Четвертий рівень */
+                #J1 {
+                    top: 309px;
+                    left: 109px;
+                }
+
+                #N1 {
+                    top: 309px;
+                    left: 547px;
+                }
+
+                #K1 {
+                    top: 157px;
+                    left: 168px;
+                }
+
+                #O1 {
+                    top: 462px;
+                    left: 483px;
+                }
+
+                #L1 {
+                    top: 99px;
+                    left: 323px;
+                }
+
+                #P1 {
+                    top: 523px;
+                    left: 327px;
+                }
+
+                #M1 {
+                    top: 157px;
+                    left: 483px;
+                }
+
+                #Q1 {
+                    top: 463px;
+                    left: 167px;
+                }
+
+                #R {
+                    top: 309px;
+                    left: 230px;
+                }
+
+                #S {
+                    top: 212px;
+                    left: 323px;
+                }
+
+                #T {
+                    top: 310px;
+                    left: 419px;
+                }
+
+                #T1 {
+                    top: 406px;
+                    left: 326px;
+                }
+
+                #T2 {
+                    top: 401px;
+                    left: 422px;
+                }
+
+                #T3 {
+                    top: 445px;
+                    left: 374px;
+                }
+
+                #T4 {
+                    top: 357px;
+                    left: 461px;
+                }
+
+            }
+        }
+    }
+}
+
+
+/*******************health_card**********************/
+
+.health_card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 35px;
+
+    .health_card_wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        h2 {
+            width: 808px;
+            height: 32px;
+            font-family: "Playfair Display SC", serif;
+            font-weight: 700;
+            font-style: bold;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .health_card_wrapper_img {
+            max-width: 808px;
+        }
+
+        #healthCardResults {
+            position: relative;
+            font-weight: 700;
+            font-size: 16px;
+
+
+            div {
+                position: absolute;
+            }
+
+
+            /* Sahasrara */
+            #sahasrara1 {
+                top: 94px;
+                left: 0;
+            }
+
+            #sahasrara2 {
+                top: 94px;
+                left: 160px;
+            }
+
+            #sahasrara3 {
+                top: 94px;
+                left: 320px;
+            }
+
+            /* Ajna */
+            #ajna1 {
+                top: 174px;
+                left: 0;
+            }
+
+            #ajna2 {
+                top: 174px;
+                left: 160px;
+            }
+
+            #ajna3 {
+                top: 174px;
+                left: 320px;
+            }
+
+            /* Vishuddha */
+            #vishuddha1 {
+                top: 254px;
+                left: 0px;
+            }
+
+            #vishuddha2 {
+                top: 254px;
+                left: 160px;
+            }
+
+            #vishuddha3 {
+                top: 254px;
+                left: 320px;
+            }
+
+            /* Anahata */
+            #anahata1 {
+                top: 334px;
+                left: 0;
+            }
+
+            #anahata2 {
+                top: 334px;
+                left: 160px;
+            }
+
+            #anahata3 {
+                top: 334px;
+                left: 320px;
+            }
+
+            /* Manipura */
+            #manipur1 {
+                top: 414px;
+                left: 0;
+            }
+
+            #manipur2 {
+                top: 414px;
+                left: 160px;
+            }
+
+            #manipur3 {
+                top: 414px;
+                left: 320px;
+            }
+
+            /* Svadhisthana */
+            #svadhisthana1 {
+                top: 494px;
+                left: 0;
+            }
+
+            #svadhisthana2 {
+                top: 494px;
+                left: 160px;
+            }
+
+            #svadhisthana3 {
+                top: 494px;
+                left: 320px;
+            }
+
+            /* Muladhara */
+            #muladhara1 {
+                top: 574px;
+                left: 0;
+            }
+
+            #muladhara2 {
+                top: 574px;
+                left: 160px;
+            }
+
+            #muladhara3 {
+                top: 574px;
+                left: 320px;
+            }
+
+            /* Summation */
+            #sum1 {
+                top: 654px;
+                left: 0;
+            }
+
+            #sum2 {
+                top: 654px;
+                left: 160px;
+            }
+
+            #sum3 {
+                top: 654px;
+                left: 320px;
+            }
+
+        }
+    }
+}
+
+
+/***************life-map*******************/
+
+.life-map {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+    color: #000;
+
+    .life-map_wrapper {
+        max-width: 1014px;
+
+    }
+
+    &__title {
+        margin-bottom: 30px;
+        text-align: left;
+        font-size: 24px;
+        font-weight: 700;
+        font-family: "Playfair Display SC", serif;
+
+
+        @media (max-width: 768px) {
+            text-align: center;
+        }
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px 60px;
+        margin-bottom: 40px;
+
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+            gap: 25px;
+        }
+    }
+
+    &__block {
+        font-size: 16px;
+        line-height: 1.4;
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        margin-bottom: 10px;
+
+        span:last-child {
+            margin-left: 10px;
+            font-size: 20px;
+        }
+    }
+
+    &__list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 6px;
+            font-size: 16px;
+        }
+    }
+
+    &__circle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid #800060; // бордовий як на макеті
+        color: #2D2B75;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+        font-weight: 700;
+        margin-right: 10px;
+        flex-shrink: 0;
+    }
+
+    &__diamond {
+        text-align: center;
+        margin: 30px 0;
+
+        h3 {
+            font-size: 24px;
+            font-weight: 700;
+            font-family: "Playfair Display SC", serif;
+            margin-bottom: 5px;
+        }
+
+        span {
+            font-size: 18px;
+            font-weight: bold;
+        }
+    }
+
+    &__description {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 1.5;
+        text-align: center;
+        max-width: 1014px;
+        margin: 0 auto 70px;
+        padding: 0px;
+    }
+}
+
+
+/**********************************/
+#consultation-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    .consultation-photo {
+        flex: 1;
+        max-width: 496px;
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 0px;
+            display: block;
+        }
+    }
+
+    .consultation-content {
+        flex: 1;
+        color: #222;
+
+        .consultation-title {
+            font-size: 32px;
+            font-weight: 700;
+            font-family: "Playfair Display SC", serif;
+            color: #2E2B75;
+            margin-bottom: 45px;
+            border-left: 4px solid #8E3B67;
+            padding-left: 8px;
+        }
+
+        .consultation-description {
+            margin-bottom: 15px;
+            line-height: 1.6;
+            font-size: 20px;
+            font-weight: 400;
+            max-width: 708px;
+        }
+
+        .consultation-subtitle {
+            margin-bottom: 15px;
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        .consultation-subtitle2 {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .consultation-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 25px 0;
+
+            li {
+                display: flex;
+                align-items: center;
+                font-size: 16px;
+                margin-bottom: 10px;
+                line-height: 1.5;
+                position: relative;
+                padding-left: 40px;
+                height: 34px;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    top: 0px;
+                    width: 34px;
+                    height: 34px;
+                    background: url("../assets/img/icon.png") no-repeat center center;
+                    background-size: contain;
+                }
+            }
+        }
+
+        .consultation-button {
+            display: inline-block;
+            padding: 14px 34px;
+            background-color: #8E3B67;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 0px;
+            transition: background 0.3s ease;
+            max-width: 521px;
+            height: 55px;
+            font-size: 20px;
+            font-weight: 700;
+            font-family: "Playfair Display SC", serif;
+            margin-top: 30px;
+
+            &:hover {
+                background-color: #4a0f6d;
+            }
+        }
+    }
+}
+
+/**********************************/
+
+.mentors {
+    padding: 60px 20px;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+
+        @media (max-width: 992px) {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+    }
+
+    &__content {
+        flex: 1;
+
+        .mentors__title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .mentors__text {
+            margin-bottom: 20px;
+            line-height: 1.5;
+            font-size: 20px;
+        }
+
+        .mentors__list {
+            list-style: none;
+            margin: 0 0 30px 0;
+            padding: 0;
+
+            li {
+                display: flex;
+                align-items: center;
+                font-size: 16px;
+                margin-bottom: 10px;
+                line-height: 1.5;
+                position: relative;
+                padding-left: 40px;
+                height: 34px;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    top: 0px;
+                    width: 34px;
+                    height: 34px;
+                    background: url("../assets/img/icon.png") no-repeat center center;
+                    background-size: contain;
+                }
+            }
+        }
+
+        .mentors__btn {
+            display: inline-block;
+            padding: 14px 34px;
+            background-color: #8E3B67;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 0px;
+            transition: background 0.3s ease;
+            width: 521px;
+            height: 55px;
+            font-size: 20px;
+            font-weight: 700;
+            font-family: "Playfair Display SC", serif;
+            margin-top: 30px;
+            text-align: center;
+
+            &:hover {
+                background-color: #4a0f6d;
+            }
+        }
+    }
+
+    &__photos {
+        flex: 1;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+
+        @media (max-width: 576px) {
+            grid-template-columns: 1fr;
+        }
+
+        .mentors__photo {
+            max-width: 293px;
+            height: auto;
+
+            img {
+                width: 100%;
+                height: auto;
+                display: block;
+                border-radius: 6px;
+            }
+        }
+    }
+}
+
+/*******************************************/
+
+.footer {
+    position: relative;
+    color: #000;
+    height: 454px;
+
+    &__bg {
+        background: url("../assets/img/footer-bg.png") no-repeat center/cover;
+        padding: 60px 20px;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        margin-bottom: 40px;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 20px;
+        }
+
+        .footer__text {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            text-align: end;
+        }
+    }
+
+    &__logo img {
+        max-width: 246px;
+    }
+
+    &__subtitle {
+        margin-bottom: 10px;
+        max-width: 155px;
+    }
+
+    &__desc {
+        font-size: 16px;
+        line-height: 1.5;
+        font-weight: 400;
+    }
+
+    &__form {
+        text-align: center;
+        margin-bottom: 40px;
+
+        &-title {
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        a {
+            display: inline-block;
+            padding: 14px 34px;
+            background-color: #B57F12;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 0px;
+            transition: background 0.3s ease;
+            width: 174pxpx;
+            height: 48px;
+            font-size: 16px;
+            font-weight: 700;
+            margin-top: 30px;
+            text-align: center;
+
+            &:hover {
+                background-color: #daa946;
+            }
+        }
+    }
+
+    &__bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        // border-top: 1px solid rgba(255, 255, 255, 0.4);
+        padding-top: 20px;
+        font-size: 14px;
+
+        @media (max-width: 576px) {
+            flex-direction: column;
+            text-align: center;
+            gap: 15px;
+        }
+    }
+
+    &__socials {
+        display: flex;
+        gap: 15px;
+
+        img {
+            height: 23px;
+        }
+    }
+}

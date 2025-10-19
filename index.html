@@ -49,9 +49,9 @@
                 </ul>
             </nav>
 
-            <div class="header__lang">
+            <!-- <div class="header__lang">
                 <span>UA</span>
-            </div>
+            </div> -->
         </div>
     </header>
 
@@ -107,7 +107,13 @@
         <div class="container health_card_wrapper">
             <h2>Карта здоров&#39;я</h2>
             <div id="healthCardResults"></div>
-            <img src="./assets/img/health.png" class="health_card_wrapper_img" alt="health_card">
+            <!-- <img src="./assets/img/health.png" class="health_card_wrapper_img" alt="health_card"> -->
+            <picture>
+                <!-- Якщо екран до 1080px -->
+                <source srcset="./assets/img/health-mob.jpg" media="(max-width: 1080px)">
+                <!-- За замовчуванням -->
+                <img src="./assets/img/health.png" alt="health_card" class="health_card_wrapper_img">
+            </picture>
         </div>
     </section>
 
@@ -217,7 +223,7 @@
 
             <a target="_blank" class="consultation-button"
                 href="https://zaverukha.com/%D0%BA%D0%BE%D0%BD%D1%82%D0%B0%D0%BA%D1%82%D0%B8/">
-                Отримати консультацію IMARIA MASTER
+                <span class="text">Отримати консультацію IMARIA MASTER</span>
             </a>
         </div>
     </section>
@@ -227,25 +233,18 @@
         <div class="container">
             <div class="mentors__content">
                 <h2 class="mentors__title">Консультація від менторів Академії</h2>
-                <p class="mentors__text">
-                    Наставники Академії – це досвідчені хілери та духовні провідники, які допоможуть вам глибше
-                    зрозуміти свою Матрицю та застосувати її знання у житті.
-                    Консультація з ментором допоможе вам:
-                </p>
+                <p class="mentors__text"> Наставники Академії – це досвідчені хілери та духовні провідники, які
+                    допоможуть вам глибше зрозуміти свою Матрицю та застосувати її знання у житті. Консультація з
+                    ментором допоможе вам: </p>
                 <ul class="mentors__list">
                     <li>Гармонізувати власну енергетику та налаштуватися на високі вібрації.</li>
                     <li>Оволодіти методи роботи зі своїм енергетичним полем.</li>
                     <li>Отримати рекомендації щодо подальшого розвитку у сфері духовних практик.</li>
-                </ul>
-                <a target="_blank" class="mentors__btn"
+                </ul> <a target="_blank" class="mentors__btn"
                     href="https://pipl.net.ua/imaria_academia#mentors-healers">Обрати ментора</a>
             </div>
-
             <div class="mentors__photos">
-                <div class="mentors__photo"><img src="./assets/img/m1.png" alt="mentor"></div>
-                <div class="mentors__photo"><img src="./assets/img/m2.png" alt="mentor"></div>
-                <div class="mentors__photo"><img src="./assets/img/m3.png" alt="mentor"></div>
-                <div class="mentors__photo"><img src="./assets/img/m4.png" alt="mentor"></div>
+                <div class="mentors__photo"><img src="./assets/img/m5.png" alt="mentor"></div>
             </div>
         </div>
     </section>
@@ -270,18 +269,19 @@
 
                 <div class="footer__form">
                     <p class="footer__form-title">Залишились питання? Напишіть нам!</p>
-                    <a target="_blank" href="https://t.me/pipl_platform_bot?start=support">Дізнатись більше</a>
+                    <a target="_blank" href="https://t.me/pipl_platform_bot?start=support">Команда турботи</a>
                 </div>
 
                 <div class="footer__bottom">
                     <p>© 2025 Всі права захищені</p>
                     <div class="footer__socials">
+                        <a target="_blank" href="https://t.me/ZaverukhaIrina"><img src="./assets/img/icons/tg.png"></a>
                         <a target="_blank" href="https://www.facebook.com/zaverukhairyna"><img
-                                src="./assets/img/facebook.png"></a>
+                                src="./assets/img/icons/facebook.png"></a>
                         <a target="_blank" href="https://www.instagram.com/zaverukhairyna"><img
-                                src="./assets/img/inst.png"></a>
+                                src="./assets/img/icons/inst.png"></a>
                         <a target="_blank" href="https://www.youtube.com/channel/UCz9oI1MnVkUTH_MCchtZDuA"><img
-                                src="./assets/img/youtube.png"></a>
+                                src="./assets/img/icons/youtube.png"></a>
                     </div>
                 </div>
             </div>

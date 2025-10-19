@@ -131,7 +131,8 @@ form.addEventListener("submit", function (e) {
     <div id="T2" class="level-4">${results.T2}</div>
     <div id="T3" class="level-4">${results.T3}</div>
     <div id="T4" class="level-4">${results.T4}</div>
-`;
+`
+    ;
 
   healthCardResults.innerHTML = `
 

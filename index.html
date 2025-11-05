@@ -62,7 +62,7 @@
             <!-- Місце під зображення -->
             <img src="./assets/img/logo3.png" alt="IMARIA logo" class="hero__logo" />
 
-            <h2 class="hero__subtitle">Он-лайн розрахунок</h2>
+            <h2 class="hero__subtitle">Онлайн-розрахунок</h2>
             <h1 class="hero__title">АНАЛІТИЧНО–НУМЕРОЛОГІЧНА<br>СИСТЕМА «ПУТЬ ДУШІ»</h1>
 
             <p class="hero__text">
@@ -79,7 +79,9 @@
 
                 <div class="form__group">
                     <label for="birthdate">Дата народження *</label>
-                    <input type="date" id="birthdate" name="birthdate" required />
+                    <input type="text" id="birthdate" name="birthdate" placeholder="дд.мм.рррр"
+                        pattern="\d{2}\.\d{2}\.\d{4}" inputmode="numeric" required />
+
                     <small class="error" id="dateError"></small>
                 </div>
 
@@ -211,7 +213,7 @@
                 <strong>Консультація від IMARIA MASTER – Ірини Заверухи</strong>
             </p>
             <p class="consultation-subtitle2">
-                Глибокий персональний аналіз вашої Матриці від засновниці методу, яка допоможе вам:
+                Глибокий персональний аналіз вашої Матриці від засновниці методу, яка допоможе:
             </p>
 
             <ul class="consultation-list">
@@ -235,7 +237,7 @@
                 <h2 class="mentors__title">Консультація від менторів Академії</h2>
                 <p class="mentors__text"> Наставники Академії – це досвідчені хілери та духовні провідники, які
                     допоможуть вам глибше зрозуміти свою Матрицю та застосувати її знання у житті. Консультація з
-                    ментором допоможе вам: </p>
+                    ментором допоможе: </p>
                 <ul class="mentors__list">
                     <li>Гармонізувати власну енергетику та налаштуватися на високі вібрації.</li>
                     <li>Оволодіти методи роботи зі своїм енергетичним полем.</li>

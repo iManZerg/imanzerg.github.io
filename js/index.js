@@ -30,7 +30,7 @@ let results;
 
 function validateName() {
   const value = nameInput.value.trim();
-  const regex = /^[A-Za-zА-Яа-яІіЇїЄєҐґ]{2,}$/u;
+const regex = /^[A-Za-zА-Яа-яІіЇїЄєҐґ]+(?:\s+[A-Za-zА-Яа-яІіЇїЄєҐґ]+)*$/u;
 
   if (!value) {
     nameError.textContent = "Поле обов’язкове";
@@ -51,7 +51,15 @@ function validateDate() {
     return false;
   }
 
-  const date = new Date(value);
+  const parts = value.split(".");
+  if (parts.length !== 3) {
+    dateError.textContent = "Некоректна дата";
+    return false;
+  }
+
+  const [day, month, year] = parts;
+  const isoDate = `${year}-${month}-${day}`;
+  const date = new Date(isoDate);
   const today = new Date();
   const minDate = new Date("1900-01-01");
   const maxDate = new Date("2025-12-31");
@@ -73,6 +81,7 @@ function validateDate() {
   return true;
 }
 
+
 function checkFormValidity() {
   const isNameValid = validateName();
   const isDateValid = validateDate();
@@ -81,12 +90,72 @@ function checkFormValidity() {
 
 nameInput.addEventListener("input", checkFormValidity);
 dateInput.addEventListener("input", checkFormValidity);
+// Маска для дати дд.мм.рррр
+dateInput.addEventListener("input", (e) => {
+  let v = e.target.value.replace(/\D/g, ""); 
+
+  if (v.length > 8) v = v.slice(0, 8);
+
+  // Формуємо дд.мм.рррр
+  if (v.length >= 5) {
+    e.target.value = `${v.slice(0,2)}.${v.slice(2,4)}.${v.slice(4,8)}`;
+  } else if (v.length >= 3) {
+    e.target.value = `${v.slice(0,2)}.${v.slice(2,4)}`;
+  } else {
+    e.target.value = v;
+  }
+});
+
+// Переписуємо validateDate — приймаємо дд.мм.рррр
+function validateDate() {
+  const value = dateInput.value;
+  if (!value) {
+    dateError.textContent = "Поле обов’язкове";
+    return false;
+  }
+
+  // Переводимо дд.мм.рррр → рррр-мм-дд
+  const parts = value.split(".");
+  if (parts.length !== 3) {
+    dateError.textContent = "Некоректна дата";
+    return false;
+  }
+
+  const [day, month, year] = parts;
+  const isoDate = `${year}-${month}-${day}`;
+  const date = new Date(isoDate);
+  const today = new Date();
+  const minDate = new Date("1900-01-01");
+  const maxDate = new Date("2025-12-31");
+
+  if (isNaN(date.getTime())) {
+    dateError.textContent = "Некоректна дата";
+    return false;
+  }
+
+  if (date > today) {
+    dateError.textContent = "Дата не може бути в майбутньому";
+    return false;
+  }
+  if (date < minDate || date > maxDate) {
+    dateError.textContent = "Дата має бути 1900–2025";
+    return false;
+  }
+
+  dateError.textContent = "";
+  return true;
+}
+
 
 form.addEventListener("submit", function (e) {
   e.preventDefault();
 
   if (!validateName() || !validateDate()) return;
-  results = calculateResults(dateInput.value);
+// Переводимо дд.мм.рррр → yyyy-mm-dd
+const [day, month, year] = dateInput.value.split(".");
+const isoDate = `${year}-${month}-${day}`;
+
+results = calculateResults(isoDate);
   console.log(results);
   resultsContent.innerHTML = `
     <div id="A" class="level-1">${results.A}</div>
@@ -234,8 +303,8 @@ function calculateResults(dateStr) {
   const date = new Date(dateStr);
   if (isNaN(date.getTime())) return null;
 
-  const A = date.getDate();
-  const B = date.getMonth() + 1;
+  const A = reduceTo22(date.getDate());
+  const B = reduceTo22(date.getMonth() + 1);
   const year = date.getFullYear();
   const C = reduceTo22(
     year.toString().split("").reduce((sum, d) => sum + parseInt(d), 0)

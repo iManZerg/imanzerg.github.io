@@ -1,4 +1,4 @@
-$primary-color: #2a247d;
+$primary-color: #2E2B75;
 $btn-gradient: linear-gradient(90deg, #2E2B75, #5650DB);
 
 * {
@@ -30,30 +30,42 @@ body {
 
 /* Header */
 .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+     width: 100%;                  // на всю ширину
+    z-index: 1000;      
     display: flex;
     align-items: center;
     background: $primary-color;
     color: #fff;
     padding: 10px 0;
-    height: 108px;
+    height: 57px;
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.25);
 
     .header__inner {
         display: flex;
         flex-direction: row;
         align-items: center;
-        justify-content: space-between;
+        // justify-content: space-between;
+        justify-content: flex-start;
+        gap: 60px;
+
+        @media (max-width: 1080px) {
+            justify-content: space-between;
+        }
 
         .header__logos {
             display: flex;
             flex-direction: row;
             align-items: center;
             justify-content: space-between;
-            gap: 108px;
+            gap: 60px;
 
             @media (max-width: 1080px) {}
 
             .logo1 {
-                max-width: 108px;
+                max-width: 90px;
 
                 @media (max-width: 1080px) {
                     display: none;
@@ -61,7 +73,18 @@ body {
             }
 
             .logo2 {
-                max-width: 124px;
+                max-width: 80px;
+                padding-top: 5px;
+            }
+        }
+
+        .header__lang {
+            margin-left: auto;
+            font-family: "Roboto", sans-serif;
+            font-size: 16px;
+
+            @media (max-width: 1080px) {
+                display: none;
             }
         }
 
@@ -72,18 +95,24 @@ body {
         gap: 20px;
         list-style: none;
 
-        a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: 400;
-            font-family: "Arsenal", sans-serif;
-            font-size: 16px;
+        li {
+            a {
+                color: #fff;
+                text-decoration: none;
+                // font-weight: 400;
+                font-weight: 500;
+                font-family: "Roboto", sans-serif;
+                font-size: 17px;
 
-            &:hover {
-                // text-decoration: underline;
+                &:hover {
+                    // text-decoration: underline;
+                }
             }
+
         }
     }
+
+
 
     /* Бургер */
     .burger {
@@ -178,7 +207,7 @@ body {
 
         .hero__logo {
             max-width: 200px;
-            margin: 0 auto 20px;
+            margin: 25px auto 20px;
         }
 
 

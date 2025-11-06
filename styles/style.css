@@ -31,16 +31,23 @@ body {
 
 /* Header */
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: #2a247d;
+  background: #2E2B75;
   color: #fff;
   padding: 10px 0;
-  height: 108px;
+  height: 57px;
+  -webkit-box-shadow: 0 15px 20px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 15px 20px rgba(0, 0, 0, 0.25);
   /* Бургер */
   /* Навігація */
   /* Мобільна адаптація */
@@ -56,9 +63,17 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  gap: 60px;
+}
+@media (max-width: 1080px) {
+  .header .header__inner {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
 }
 .header .header__inner .header__logos {
   display: -webkit-box;
@@ -74,10 +89,10 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  gap: 108px;
+  gap: 60px;
 }
 .header .header__inner .header__logos .logo1 {
-  max-width: 108px;
+  max-width: 90px;
 }
 @media (max-width: 1080px) {
   .header .header__inner .header__logos .logo1 {
@@ -85,7 +100,18 @@ body {
   }
 }
 .header .header__inner .header__logos .logo2 {
-  max-width: 124px;
+  max-width: 80px;
+  padding-top: 5px;
+}
+.header .header__inner .header__lang {
+  margin-left: auto;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+}
+@media (max-width: 1080px) {
+  .header .header__inner .header__lang {
+    display: none;
+  }
 }
 .header .nav__list {
   display: -webkit-box;
@@ -94,12 +120,12 @@ body {
   gap: 20px;
   list-style: none;
 }
-.header .nav__list a {
+.header .nav__list li a {
   color: #fff;
   text-decoration: none;
-  font-weight: 400;
-  font-family: "Arsenal", sans-serif;
-  font-size: 16px;
+  font-weight: 500;
+  font-family: "Roboto", sans-serif;
+  font-size: 17px;
 }
 .header .burger {
   display: none;
@@ -159,7 +185,7 @@ body {
     right: -100%;
     width: 70%;
     height: 100vh;
-    background: #2a247d;
+    background: #2E2B75;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -206,14 +232,14 @@ body {
 }
 .hero .hero__inner .hero__logo {
   max-width: 200px;
-  margin: 0 auto 20px;
+  margin: 25px auto 20px;
 }
 .hero .hero__inner .hero__subtitle {
   font-family: "Arsenal", sans-serif;
   font-size: 24px;
   font-weight: normal;
   margin-bottom: 10px;
-  color: #2a247d;
+  color: #2E2B75;
 }
 @media (max-width: 1080px) {
   .hero .hero__inner .hero__subtitle {
@@ -226,7 +252,7 @@ body {
   font-style: bold;
   font-size: 32px;
   margin-bottom: 50px;
-  color: #2a247d;
+  color: #2E2B75;
 }
 @media (max-width: 1080px) {
   .hero .hero__inner .hero__title {
@@ -264,7 +290,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  color: #2a247d;
+  color: #2E2B75;
   font-weight: normal;
   font-size: 14px;
 }
@@ -364,7 +390,7 @@ body {
           align-items: center;
 }
 .results .results_content h2 {
-  color: #2a247d;
+  color: #2E2B75;
   margin-bottom: 43px;
   font-family: "Playfair Display SC", serif;
   font-weight: 700;

@@ -30,7 +30,7 @@ let results;
 
 function validateName() {
   const value = nameInput.value.trim();
-const regex = /^[A-Za-zА-Яа-яІіЇїЄєҐґ]+(?:\s+[A-Za-zА-Яа-яІіЇїЄєҐґ]+)*$/u;
+  const regex = /^[A-Za-zА-Яа-яІіЇїЄєҐґ]+(?:\s+[A-Za-zА-Яа-яІіЇїЄєҐґ]+)*$/u;
 
   if (!value) {
     nameError.textContent = "Поле обов’язкове";
@@ -88,19 +88,22 @@ function checkFormValidity() {
   submitBtn.disabled = !(isNameValid && isDateValid);
 }
 
+
+
+
 nameInput.addEventListener("input", checkFormValidity);
 dateInput.addEventListener("input", checkFormValidity);
 // Маска для дати дд.мм.рррр
 dateInput.addEventListener("input", (e) => {
-  let v = e.target.value.replace(/\D/g, ""); 
+  let v = e.target.value.replace(/\D/g, "");
 
   if (v.length > 8) v = v.slice(0, 8);
 
   // Формуємо дд.мм.рррр
   if (v.length >= 5) {
-    e.target.value = `${v.slice(0,2)}.${v.slice(2,4)}.${v.slice(4,8)}`;
+    e.target.value = `${v.slice(0, 2)}.${v.slice(2, 4)}.${v.slice(4, 8)}`;
   } else if (v.length >= 3) {
-    e.target.value = `${v.slice(0,2)}.${v.slice(2,4)}`;
+    e.target.value = `${v.slice(0, 2)}.${v.slice(2, 4)}`;
   } else {
     e.target.value = v;
   }
@@ -147,15 +150,39 @@ function validateDate() {
 }
 
 
+function processNumber(num) {
+  // 1️⃣ Якщо число ≤ 22 — повертаємо без змін
+  if (num <= 22) {
+    return num;
+  }
+
+  // 2️⃣ Якщо двозначне і більше 22 — зменшуємо до 22
+  if (num > 22 && num < 100) {
+    return reduceTo22(num);
+  }
+
+  // 3️⃣ Якщо трицифрове (100–999)
+  if (num >= 100 && num <= 999) {
+    const hundredsPart = Math.floor(num / 10);
+    const lastDigit = num % 10;
+    const combined = hundredsPart + lastDigit;
+    return reduceTo22(combined);
+  }
+
+  // 4️⃣ Якщо поза діапазоном — просто повертаємо як є
+  return num;
+}
+
+
 form.addEventListener("submit", function (e) {
   e.preventDefault();
 
   if (!validateName() || !validateDate()) return;
-// Переводимо дд.мм.рррр → yyyy-mm-dd
-const [day, month, year] = dateInput.value.split(".");
-const isoDate = `${year}-${month}-${day}`;
+  // Переводимо дд.мм.рррр → yyyy-mm-dd
+  const [day, month, year] = dateInput.value.split(".");
+  const isoDate = `${year}-${month}-${day}`;
 
-results = calculateResults(isoDate);
+  results = calculateResults(isoDate);
   console.log(results);
   resultsContent.innerHTML = `
     <div id="A" class="level-1">${results.A}</div>
@@ -347,7 +374,8 @@ function calculateResults(dateStr) {
   const T4 = reduceTo22(T2 + N);
 
   const healthCardSum1 = reduceTo22(A + J1 + J + R + I + N + C);
-  const healthCardSum2 = reduceTo22(B + L1 + L + S + I + P + D);
+  // const healthCardSum2 = reduceTo22(B + L1 + L + S + I + P + D);
+  const healthCardSum2 = processNumber(B + L1 + L + S + I + P + D);
   const healthCardSum3 = reduceTo22(reduceTo22(reduceTo22(A + B) + reduceTo22(J1 + L1) + reduceTo22(J + L) + reduceTo22(R + S) + reduceTo22(I + I) + reduceTo22(N + P) + reduceTo22(C + D)));
 
 

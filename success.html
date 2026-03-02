@@ -3,20 +3,89 @@
 <head>
   <meta charset="UTF-8" />
   <title>Оплата успішна</title>
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      padding: 50px;
+      background: #f4f6f8;
+    }
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      max-width: 500px;
+      margin: auto;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
+      background: #229ED9;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 18px;
+    }
+    .loading {
+      color: #666;
+    }
+  </style>
 </head>
 <body>
-  <h1>Дякуємо за оплату! 🎉</h1>
-  <p>Натисніть кнопку нижче, щоб активувати курс у Telegram:</p>
-  <a id="botLink" href="#">Відкрити бота</a>
+  <div class="card">
+    <h1>🎉 Перевіряємо оплату...</h1>
+    <p class="loading" id="status">Будь ласка, зачекайте 3-5 секунд</p>
+    <a id="botLink" class="btn" style="display:none;">Відкрити Telegram бот</a>
+  </div>
 
   <script>
     const params = new URLSearchParams(window.location.search);
-    const token = params.get("token");
+    const order = params.get("order");
 
-    const botUsername = "YOUR_BOT_USERNAME";
-    document.getElementById(
-      "botLink"
-    ).href = `https://t.me/${botUsername}?start=${token}`;
+    const botUsername = "YOUR_BOT_USERNAME"; // <-- ЗАМІНИ
+    const API_URL = "https://validatetoken-dwtlhl22ra-uc.a.run.app";
+
+    async function checkPayment() {
+      if (!order) {
+        document.getElementById("status").innerText =
+          "Помилка: номер замовлення не знайдено";
+        return;
+      }
+
+      try {
+        // чекаємо webhook (WayForPay інколи обробляє 2-10 сек)
+        await new Promise((r) => setTimeout(r, 4000));
+
+        const res = await fetch(API_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ orderReference: order }),
+        });
+
+        const data = await res.json();
+
+        if (!data.valid || !data.token) {
+          document.getElementById("status").innerText =
+            "Платіж ще обробляється. Оновіть сторінку через 5-10 секунд.";
+          return;
+        }
+
+        document.getElementById("status").innerText =
+          "✅ Оплата підтверджена! Доступ відкрито.";
+
+        const botLink = document.getElementById("botLink");
+        botLink.href = `https://t.me/${botUsername}?start=${data.token}`;
+        botLink.style.display = "inline-block";
+      } catch (e) {
+        document.getElementById("status").innerText =
+          "Помилка перевірки оплати. Спробуйте оновити сторінку.";
+        console.error(e);
+      }
+    }
+
+    checkPayment();
   </script>
 </body>
 </html>

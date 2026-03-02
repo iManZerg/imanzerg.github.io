@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <title>Онлайн курс</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <section class="hero">
+    <h1>Онлайн курс (25 уроків)</h1>
+    <p>Доступ назавжди після оплати</p>
+
+    <input type="email" id="email" placeholder="Ваш Email" required />
+    <button onclick="buyCourse()">Купити за 100 грн</button>
+  </section>
+
+  <script>
+async function buyCourse() {
+  const email = document.getElementById("email").value;
+
+  if (!email) {
+    alert("Введіть email");
+    return;
+  }
+
+  try {
+    const res = await fetch(
+      "https://createpayment-dwtlhl22ra-uc.a.run.app",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      }
+    );
+
+    const data = await res.json();
+
+    if (!data.checkoutUrl) {
+      alert("Помилка створення платежу");
+      return;
+    }
+
+    const form = document.createElement("form");
+    form.method = "POST";
+    form.action = data.checkoutUrl;
+
+    for (const key in data.paymentData) {
+      const input = document.createElement("input");
+      input.type = "hidden";
+      input.name = key;
+      input.value = Array.isArray(data.paymentData[key])
+        ? data.paymentData[key].join(";")
+        : data.paymentData[key];
+      form.appendChild(input);
+    }
+
+    document.body.appendChild(form);
+    form.submit();
+  } catch (e) {
+    console.error(e);
+    alert("Помилка з'єднання з сервером");
+  }
+}
+</script>
+</body>
+</html>

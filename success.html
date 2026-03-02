@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <title>Оплата успішна</title>
+</head>
+<body>
+  <h1>Дякуємо за оплату! 🎉</h1>
+  <p>Натисніть кнопку нижче, щоб активувати курс у Telegram:</p>
+  <a id="botLink" href="#">Відкрити бота</a>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const token = params.get("token");
+
+    const botUsername = "YOUR_BOT_USERNAME";
+    document.getElementById(
+      "botLink"
+    ).href = `https://t.me/${botUsername}?start=${token}`;
+  </script>
+</body>
+</html>

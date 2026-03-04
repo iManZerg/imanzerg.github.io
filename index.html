@@ -1,66 +1,231 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8" />
-  <title>Онлайн курс</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Матриця Долі | Авторський курс</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-gradient: radial-gradient(circle at top center, #fff5f5 0%, #ffffff 100%);
+            --accent-color: #1a1a1a;
+            --text-main: #1a1a1a;
+            --text-secondary: #666;
+            --grid-color: rgba(0, 0, 0, 0.03);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background: var(--bg-gradient);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Фонова сітка як на скріншоті */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: 
+                linear-gradient(var(--grid-color) 1px, transparent 1px),
+                linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+            background-size: 40px 40px;
+            z-index: -1;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            padding: 2rem;
+            text-align: center;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        /* Бейджики */
+        .badge-container {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+
+        .badge {
+            padding: 6px 16px;
+            border-radius: 100px;
+            font-size: 14px;
+            font-weight: 600;
+            border: 1px solid rgba(0,0,0,0.08);
+            background: white;
+        }
+
+      
+
+        /* Заголовки */
+        h1 {
+            font-size: clamp(32px, 8vw, 56px);
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            margin-bottom: 20px;
+        }
+
+        p.description {
+            font-size: clamp(16px, 4vw, 20px);
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            line-height: 1.5;
+            max-width: 450px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Форма */
+        .cta-box {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        input[type="email"] {
+            width: 100%;
+            padding: 18px 24px;
+            border-radius: 16px;
+            border: 1px solid rgba(0,0,0,0.1);
+            font-size: 16px;
+            transition: all 0.3s ease;
+            outline: none;
+            background: rgba(255,255,255,0.8);
+            backdrop-filter: blur(4px);
+        }
+
+        input[type="email"]:focus {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 4px rgba(0,0,0,0.05);
+        }
+
+        button {
+            width: 100%;
+            padding: 18px 24px;
+            border-radius: 16px;
+            border: none;
+            background: var(--accent-color);
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s active, opacity 0.3s;
+        }
+
+        button:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .info-footer {
+            margin-top: 24px;
+            font-size: 13px;
+            color: #999;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 480px) {
+            .container { padding: 1rem; }
+            h1 { margin-bottom: 16px; }
+        }
+    </style>
 </head>
 <body>
-  <section class="hero">
-    <h1>Онлайн курс (25 уроків)</h1>
-    <p>Доступ назавжди після оплати</p>
 
-    <input type="email" id="email" placeholder="Ваш Email" required />
-    <button onclick="buyCourse()">Купити за 100 грн</button>
-  </section>
+    <section class="container">
+        <div class="badge-container">
+            <span class="badge">Telegram Формат</span>
+        </div>
 
-  <script>
-async function buyCourse() {
-  const email = document.getElementById("email").value;
+        <h1>Зміни свою долю за 25 кроків</h1>
+        <p class="description">
+            Глибоке занурення в Матрицю Долі. Отримай розшифровку своєї особистості та доступ до уроків назавжди.
+        </p>
 
-  if (!email) {
-    alert("Введіть email");
-    return;
-  }
+        <div class="cta-box">
+            <input type="email" id="email" placeholder="Ваш Email" required />
+            <button onclick="buyCourse()">Почати навчання за 1 грн</button>
+        </div>
 
-  try {
-    const res = await fetch(
-      "https://createpayment-dwtlhl22ra-uc.a.run.app",
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
-      }
-    );
+        <p class="info-footer">
+            25 уроків • Доступ миттєво • Підтримка в Telegram
+        </p>
+    </section>
 
-    const data = await res.json();
+    <script>
+        async function buyCourse() {
+            const email = document.getElementById("email").value;
 
-    if (!data.checkoutUrl) {
-      alert("Помилка створення платежу");
-      return;
-    }
+            if (!email) {
+                alert("Введіть email");
+                return;
+            }
 
-    const form = document.createElement("form");
-    form.method = "POST";
-    form.action = data.checkoutUrl;
+            try {
+                const res = await fetch(
+                    "https://createpayment-dwtlhl22ra-uc.a.run.app",
+                    {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({ email }),
+                    }
+                );
 
-    for (const key in data.paymentData) {
-      const input = document.createElement("input");
-      input.type = "hidden";
-      input.name = key;
-      input.value = Array.isArray(data.paymentData[key])
-        ? data.paymentData[key].join(";")
-        : data.paymentData[key];
-      form.appendChild(input);
-    }
+                const data = await res.json();
 
-    document.body.appendChild(form);
-    form.submit();
-  } catch (e) {
-    console.error(e);
-    alert("Помилка з'єднання з сервером");
-  }
-}
-</script>
+                if (!data.checkoutUrl) {
+                    alert("Помилка створення платежу");
+                    return;
+                }
+
+                const form = document.createElement("form");
+                form.method = "POST";
+                form.action = data.checkoutUrl;
+
+                for (const key in data.paymentData) {
+                    const input = document.createElement("input");
+                    input.type = "hidden";
+                    input.name = key;
+                    input.value = Array.isArray(data.paymentData[key])
+                        ? data.paymentData[key].join(";")
+                        : data.paymentData[key];
+                    form.appendChild(input);
+                }
+
+                document.body.appendChild(form);
+                form.submit();
+            } catch (e) {
+                console.error(e);
+                alert("Помилка з'єднання з сервером");
+            }
+        }
+    </script>
 </body>
 </html>

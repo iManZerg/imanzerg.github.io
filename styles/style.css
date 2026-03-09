@@ -7,7 +7,7 @@
 }
 
 body {
-  font-family: "Arsenal", sans-serif;
+  font-family: "Nunito sans", sans-serif;
   color: #222;
   background: #FDFDFF;
 }
@@ -48,9 +48,6 @@ body {
   height: 57px;
   -webkit-box-shadow: 0 15px 20px rgba(0, 0, 0, 0.25);
           box-shadow: 0 15px 20px rgba(0, 0, 0, 0.25);
-  /* Бургер */
-  /* Навігація */
-  /* Мобільна адаптація */
 }
 .header .header__inner {
   display: -webkit-box;
@@ -127,6 +124,9 @@ body {
   font-family: "Roboto", sans-serif;
   font-size: 17px;
 }
+.header {
+  /* Бургер */
+}
 .header .burger {
   display: none;
   -webkit-box-orient: vertical;
@@ -161,6 +161,9 @@ body {
   -webkit-transform: rotate(-45deg) translateY(-8px);
           transform: rotate(-45deg) translateY(-8px);
 }
+.header {
+  /* Навігація */
+}
 .header .nav .nav__list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -172,6 +175,9 @@ body {
   color: #fff;
   text-decoration: none;
   font-weight: 500;
+}
+.header {
+  /* Мобільна адаптація */
 }
 @media (max-width: 1080px) {
   .header .burger {
@@ -235,7 +241,7 @@ body {
   margin: 25px auto 20px;
 }
 .hero .hero__inner .hero__subtitle {
-  font-family: "Arsenal", sans-serif;
+  font-family: "Nunito sans", sans-serif;
   font-size: 24px;
   font-weight: normal;
   margin-bottom: 10px;
@@ -247,7 +253,7 @@ body {
   }
 }
 .hero .hero__inner .hero__title {
-  font-family: "Playfair Display SC", serif;
+  font-family: "Cormorant SC", serif;
   font-weight: 700;
   font-style: bold;
   font-size: 32px;
@@ -319,28 +325,45 @@ body {
   height: 14px;
 }
 .form button {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
   width: 210px;
   height: 55px;
-  background: -webkit-gradient(linear, left top, right top, from(#2E2B75), to(#5650DB));
-  background: linear-gradient(90deg, #2E2B75, #5650DB);
+  background: linear-gradient(45deg, #2E2B75, #5650DB);
   border: none;
   color: #fff;
   padding: 14px 34px;
   font-size: 20px;
   border-radius: 0px;
   cursor: pointer;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-  font-family: "Playfair Display SC", serif;
+  font-family: "Cormorant SC", serif;
   font-weight: 700;
-  font-style: bold;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+}
+.form button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, #2E2B75, #5650DB, #2E2B75);
+  opacity: 0;
+  z-index: -1;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
 }
 .form button:disabled {
   background: #aaa;
   cursor: not-allowed;
 }
-.form button:hover:enabled {
-  opacity: 0.9;
+.form button:disabled::before {
+  display: none;
+}
+.form button:hover:enabled::before {
+  opacity: 1;
 }
 @media (max-width: 1080px) {
   .form button {
@@ -392,7 +415,7 @@ body {
 .results .results_content h2 {
   color: #2E2B75;
   margin-bottom: 43px;
-  font-family: "Playfair Display SC", serif;
+  font-family: "Cormorant SC", serif;
   font-weight: 700;
   font-style: bold;
   font-size: 32px;
@@ -417,12 +440,6 @@ body {
 .results .results_content .results_content_matrix_wrapper #resultsContent {
   position: relative;
   top: 0;
-  /* Перший рівень */
-  /* 📏 Пропорційне масштабування: 358 / 663 = 0.5398 */
-  /* 📏 Масштаб 0.5398 + зсув top -5px, left -10px */
-  /* Другий рівень */
-  /* Третій рівень */
-  /* Четвертий рівень */
 }
 .results .results_content .results_content_matrix_wrapper #resultsContent .level-1 {
   position: absolute;
@@ -517,6 +534,11 @@ body {
     font-size: 13px;
   }
 }
+.results .results_content .results_content_matrix_wrapper #resultsContent {
+  /* Перший рівень */
+  /* 📏 Пропорційне масштабування: 358 / 663 = 0.5398 */
+  /* 📏 Масштаб 0.5398 + зсув top -5px, left -10px */
+}
 .results .results_content .results_content_matrix_wrapper #resultsContent #A {
   top: 297px;
   left: 46px;
@@ -556,6 +578,9 @@ body {
     top: 293px;
     left: 160px;
   }
+}
+.results .results_content .results_content_matrix_wrapper #resultsContent {
+  /* Другий рівень */
 }
 .results .results_content .results_content_matrix_wrapper #resultsContent #E {
   top: 116px;
@@ -606,6 +631,9 @@ body {
     top: 155px;
     left: 161px;
   }
+}
+.results .results_content .results_content_matrix_wrapper #resultsContent {
+  /* Третій рівень */
 }
 .results .results_content .results_content_matrix_wrapper #resultsContent #I1 {
   top: 343px;
@@ -706,6 +734,9 @@ body {
     top: 184px;
     left: 208px;
   }
+}
+.results .results_content .results_content_matrix_wrapper #resultsContent {
+  /* Четвертий рівень */
 }
 .results .results_content .results_content_matrix_wrapper #resultsContent #J1 {
   top: 306px;
@@ -892,11 +923,12 @@ body {
 .health_card .health_card_wrapper h2 {
   width: 808px;
   height: 32px;
-  font-family: "Playfair Display SC", serif;
+  font-family: "Cormorant SC", serif;
   font-weight: 700;
   font-style: bold;
-  font-size: 24px;
+  font-size: 32px;
   margin-bottom: 20px;
+  color: #2E2B75;
 }
 @media (max-width: 1080px) {
   .health_card .health_card_wrapper h2 {
@@ -915,14 +947,6 @@ body {
   position: relative;
   font-weight: 700;
   font-size: 16px;
-  /* Sahasrara */
-  /* Ajna */
-  /* Vishuddha */
-  /* Anahata */
-  /* Manipura */
-  /* Svadhisthana */
-  /* Muladhara */
-  /* Summation */
 }
 .health_card .health_card_wrapper #healthCardResults div {
   position: absolute;
@@ -940,6 +964,9 @@ body {
         -ms-flex-align: center;
             align-items: center;
   }
+}
+.health_card .health_card_wrapper #healthCardResults {
+  /* Sahasrara */
 }
 .health_card .health_card_wrapper #healthCardResults #sahasrara1 {
   top: 94px;
@@ -971,6 +998,9 @@ body {
     left: 131px;
   }
 }
+.health_card .health_card_wrapper #healthCardResults {
+  /* Ajna */
+}
 .health_card .health_card_wrapper #healthCardResults #ajna1 {
   top: 174px;
   left: 0;
@@ -1000,6 +1030,9 @@ body {
     top: 120px;
     left: 131px;
   }
+}
+.health_card .health_card_wrapper #healthCardResults {
+  /* Vishuddha */
 }
 .health_card .health_card_wrapper #healthCardResults #vishuddha1 {
   top: 254px;
@@ -1031,6 +1064,9 @@ body {
     left: 131px;
   }
 }
+.health_card .health_card_wrapper #healthCardResults {
+  /* Anahata */
+}
 .health_card .health_card_wrapper #healthCardResults #anahata1 {
   top: 334px;
   left: 0;
@@ -1060,6 +1096,9 @@ body {
     top: 243px;
     left: 131px;
   }
+}
+.health_card .health_card_wrapper #healthCardResults {
+  /* Manipura */
 }
 .health_card .health_card_wrapper #healthCardResults #manipur1 {
   top: 414px;
@@ -1091,6 +1130,9 @@ body {
     left: 131px;
   }
 }
+.health_card .health_card_wrapper #healthCardResults {
+  /* Svadhisthana */
+}
 .health_card .health_card_wrapper #healthCardResults #svadhisthana1 {
   top: 494px;
   left: 0;
@@ -1121,6 +1163,9 @@ body {
     left: 131px;
   }
 }
+.health_card .health_card_wrapper #healthCardResults {
+  /* Muladhara */
+}
 .health_card .health_card_wrapper #healthCardResults #muladhara1 {
   top: 574px;
   left: 0;
@@ -1150,6 +1195,9 @@ body {
     top: 432px;
     left: 131px;
   }
+}
+.health_card .health_card_wrapper #healthCardResults {
+  /* Summation */
 }
 .health_card .health_card_wrapper #healthCardResults #sum1 {
   top: 654px;
@@ -1206,9 +1254,11 @@ body {
 .life-map__title {
   margin-bottom: 30px;
   text-align: left;
-  font-size: 24px;
   font-weight: 700;
-  font-family: "Playfair Display SC", serif;
+  font-size: 32px;
+  margin-bottom: 20px;
+  font-family: "Cormorant SC", serif;
+  color: #2E2B75;
 }
 @media (max-width: 768px) {
   .life-map__title {
@@ -1243,6 +1293,8 @@ body {
           align-items: center;
   font-weight: bold;
   margin-bottom: 10px;
+  font-family: "Cormorant SC", serif;
+  color: #2E2B75;
 }
 @media (max-width: 1080px) {
   .life-map__header {
@@ -1294,9 +1346,10 @@ body {
   margin: 30px 0;
 }
 .life-map__diamond h3 {
-  font-size: 24px;
+  font-size: 30px;
   font-weight: 700;
-  font-family: "Playfair Display SC", serif;
+  font-family: "Cormorant SC", serif;
+  color: #2E2B75;
   margin-bottom: 5px;
 }
 .life-map__diamond span {
@@ -1376,7 +1429,7 @@ body {
 #consultation-section .consultation-content .consultation-title {
   font-size: 32px;
   font-weight: 700;
-  font-family: "Playfair Display SC", serif;
+  font-family: "Cormorant SC", serif;
   color: #2E2B75;
   margin-bottom: 45px;
   border-left: 4px solid #8E3B67;
@@ -1439,20 +1492,50 @@ body {
   background-size: contain;
 }
 #consultation-section .consultation-content .consultation-button {
-  display: inline-block;
+  position: relative;
+  z-index: 1;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow: hidden;
   padding: 14px 34px;
-  background-color: #8E3B67;
+  background: linear-gradient(45deg, #9F316B, #770f6e);
   color: #fff;
   text-decoration: none;
   border-radius: 0px;
-  -webkit-transition: background 0.3s ease;
-  transition: background 0.3s ease;
   max-width: 521px;
   height: 55px;
   font-size: 20px;
   font-weight: 700;
-  font-family: "Playfair Display SC", serif;
+  font-family: "Cormorant SC", serif;
   margin-top: 30px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+#consultation-section .consultation-content .consultation-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, #9F316B, #761E4C, #BB2172);
+  opacity: 0;
+  z-index: -1;
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+#consultation-section .consultation-content .consultation-button:hover {
+  color: #fff;
+}
+#consultation-section .consultation-content .consultation-button:hover::before {
+  opacity: 1;
 }
 @media (max-width: 1080px) {
   #consultation-section .consultation-content .consultation-button {
@@ -1460,9 +1543,6 @@ body {
     width: 358px;
     height: 49px;
   }
-}
-#consultation-section .consultation-content .consultation-button:hover {
-  background-color: #4a0f6d;
 }
 #consultation-section .consultation-content .consultation-button .text {
   display: inline;
@@ -1582,24 +1662,50 @@ body {
   }
 }
 .mentors__content .mentors__btn {
-  display: inline-block;
+  position: relative;
+  z-index: 1;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow: hidden;
   padding: 14px 34px;
-  background-color: #8E3B67;
+  background: linear-gradient(45deg, #9F316B, #770f6e);
   color: #fff;
   text-decoration: none;
   border-radius: 0px;
-  -webkit-transition: background 0.3s ease;
-  transition: background 0.3s ease;
-  width: 521px;
+  max-width: 521px;
   height: 55px;
   font-size: 20px;
   font-weight: 700;
-  font-family: "Playfair Display SC", serif;
+  font-family: "Cormorant SC", serif;
   margin-top: 30px;
-  text-align: center;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.mentors__content .mentors__btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, #9F316B, #761E4C, #BB2172);
+  opacity: 0;
+  z-index: -1;
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
 }
 .mentors__content .mentors__btn:hover {
-  background-color: #4a0f6d;
+  color: #fff;
+}
+.mentors__content .mentors__btn:hover::before {
+  opacity: 1;
 }
 @media (max-width: 1080px) {
   .mentors__content .mentors__btn {
@@ -1730,24 +1836,50 @@ body {
   }
 }
 .footer__form a {
-  display: inline-block;
+  position: relative;
+  z-index: 1;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow: hidden;
   padding: 14px 34px;
-  background-color: #8E3B67;
+  background: linear-gradient(45deg, #9F316B, #770f6e);
   color: #fff;
   text-decoration: none;
   border-radius: 0px;
-  -webkit-transition: background 0.3s ease;
-  transition: background 0.3s ease;
   width: 264px;
   height: 48px;
   font-size: 16px;
   font-weight: 700;
+  font-family: "Cormorant SC", serif;
   margin-top: 30px;
-  text-align: center;
-  font-family: "Playfair Display SC", serif;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.footer__form a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, #9F316B, #761E4C, #BB2172);
+  opacity: 0;
+  z-index: -1;
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
 }
 .footer__form a:hover {
-  background-color: #4a0f6d;
+  color: #fff;
+}
+.footer__form a:hover::before {
+  opacity: 1;
 }
 @media (max-width: 1080px) {
   .footer__form a {

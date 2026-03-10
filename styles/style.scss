@@ -23,6 +23,7 @@ body {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
+    overflow-x: hidden;
 
     @media (max-width: 1080px) {
         overflow-x: hidden;
@@ -350,813 +351,852 @@ body {
 
 }
 
-/* Results */
-.results {
+
+/**********************************************************/
+
+.main-wrapper {
+    // border: 1px solid red;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    padding: 50px 20px;
-    background: #fff;
-    margin-top: 50px;
-    text-align: center;
 
-    @media (max-width: 1080px) {
-        margin-top: 0px;
-        padding: 10px 10px;
+    h2 {
+        color: $primary-color;
+        margin-bottom: 43px;
+        font-family: "Cormorant SC", serif;
+        font-weight: 700;
+        font-style: bold;
+        font-size: 40px;
+
+        @media (max-width: 1080px) {
+            font-size: 26px;
+        }
     }
 
 
-    .results_content {
+    .main-wrapper_container {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        flex-direction: row;
+        padding: 0;
+
+        @media (max-width: 1225px) {
+            flex-direction: column;
+        }
 
 
-        h2 {
-            color: $primary-color;
-            margin-bottom: 43px;
-            font-family: "Cormorant SC", serif;
-            font-weight: 700;
-            font-style: bold;
-            font-size: 32px;
+        /* Results */
+        .results {
+            // border: 1px solid orangered;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            padding: 0px 0px;
+            background: #fff;
+            margin-top: 0px;
+            text-align: center;
 
             @media (max-width: 1080px) {
-                font-size: 26px;
+                margin-top: 0px;
+                padding: 10px 10px;
+            }
+
+
+            .results_content {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 663px;
+
+                .results_content_matrix_wrapper {
+                    // border: 1px solid red;
+                    position: relative;
+                    max-width: 663px;
+
+                    .results_content_matrix {
+                        // border: 1px solid red;
+                        max-width: 663px;
+
+                        @media (max-width: 1080px) {
+                            width: 368px;
+                        }
+                    }
+
+                    #resultsContent {
+                        position: relative;
+                        top: 0;
+
+                        .level-1 {
+                            position: absolute;
+                            font-weight: 700;
+                            font-style: bold;
+                            font-size: 20px;
+                            width: 45px;
+                            height: 45px;
+                            border-radius: 50%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            font-family: "Cormorant SC", serif;
+
+                            @media (max-width: 1080px) {
+                                font-size: 16px;
+                            }
+                        }
+
+                        .level-2 {
+                            text-align: center;
+                            position: absolute;
+                            font-weight: 400;
+                            font-style: normal;
+                            font-size: 20px;
+                            width: 45px;
+                            height: 45px;
+                            border-radius: 50%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            font-family: "Cormorant SC", serif;
+
+                            @media (max-width: 1080px) {
+                                font-size: 16px;
+                            }
+                        }
+
+                        .level-3 {
+                            position: absolute;
+                            font-weight: 400;
+                            font-style: normal;
+                            font-size: 16px;
+                            width: 27px;
+                            height: 27px;
+                            border-radius: 50%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            font-family: "Cormorant SC", serif;
+
+                            @media (max-width: 1080px) {
+                                font-size: 13px;
+                            }
+                        }
+
+                        .level-4 {
+                            position: absolute;
+                            font-weight: 400;
+                            font-style: normal;
+                            font-size: 16px;
+                            width: 27px;
+                            height: 27px;
+                            border-radius: 50%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            font-family: "Cormorant SC", serif;
+
+                            @media (max-width: 1080px) {
+                                font-size: 13px;
+                            }
+                        }
+
+                        /* Перший рівень */
+                        /* 📏 Пропорційне масштабування: 358 / 663 = 0.5398 */
+
+                        /* 📏 Масштаб 0.5398 + зсув top -5px, left -10px */
+
+                        #A {
+                            top: 297px;
+                            left: 46px;
+
+                            @media (max-width: 1080px) {
+                                top: 155.3px;
+                                left: 14.8px;
+                            }
+                        }
+
+                        #B {
+                            top: 50px;
+                            left: 307px;
+
+                            @media (max-width: 1080px) {
+                                top: 18px;
+                                left: 160px;
+                            }
+                        }
+
+                        #C {
+                            top: 297px;
+                            left: 568px;
+
+                            @media (max-width: 1080px) {
+                                top: 155px;
+                                left: 306px;
+                            }
+                        }
+
+                        #D {
+                            top: 546px;
+                            left: 307px;
+
+                            @media (max-width: 1080px) {
+                                top: 293px;
+                                left: 160px;
+                            }
+                        }
+
+                        /* Другий рівень */
+                        #E {
+                            top: 116px;
+                            left: 122px;
+
+                            @media (max-width: 1080px) {
+                                top: 54px;
+                                left: 57px;
+                            }
+                        }
+
+                        #F {
+                            top: 116px;
+                            left: 491px;
+
+                            @media (max-width: 1080px) {
+                                top: 54px;
+                                left: 263px;
+                            }
+                        }
+
+                        #G {
+                            top: 479px;
+                            left: 491px;
+
+                            @media (max-width: 1080px) {
+                                top: 256px;
+                                left: 263px;
+                            }
+                        }
+
+                        #H {
+                            top: 479px;
+                            left: 122px;
+
+                            @media (max-width: 1080px) {
+                                top: 255px;
+                                left: 58px;
+                            }
+                        }
+
+                        #I {
+                            top: 297px;
+                            left: 306px;
+
+                            @media (max-width: 1080px) {
+                                top: 155px;
+                                left: 161px;
+                            }
+                        }
+
+                        /* Третій рівень */
+                        #I1 {
+                            top: 343px;
+                            left: 348px;
+
+                            @media (max-width: 1080px) {
+                                top: 184px;
+                                left: 187px;
+                            }
+                        }
+
+                        #N {
+                            top: 306px;
+                            left: 501px;
+
+                            @media (max-width: 1080px) {
+                                top: 163px;
+                                left: 272px;
+                            }
+                        }
+
+                        #J {
+                            top: 306px;
+                            left: 131px;
+
+                            @media (max-width: 1080px) {
+                                top: 163px;
+                                left: 67px;
+                            }
+                        }
+
+                        #O {
+                            top: 435px;
+                            left: 449px;
+
+                            @media (max-width: 1080px) {
+                                top: 235px;
+                                left: 243px;
+                            }
+                        }
+
+                        #K {
+                            top: 179px;
+                            left: 184px;
+
+                            @media (max-width: 1080px) {
+                                top: 93px;
+                                left: 96px;
+                            }
+                        }
+
+                        #P {
+                            top: 489px;
+                            left: 316px;
+
+                            @media (max-width: 1080px) {
+                                top: 265px;
+                                left: 170px;
+                            }
+                        }
+
+                        #L {
+                            top: 125px;
+                            left: 315px;
+
+                            @media (max-width: 1080px) {
+                                top: 63px;
+                                left: 169px;
+
+                            }
+                        }
+
+                        #Q {
+                            top: 435px;
+                            left: 184px;
+
+                            @media (max-width: 1080px) {
+                                top: 235px;
+                                left: 96.5px;
+
+                            }
+                        }
+
+                        #M {
+                            top: 178px;
+                            left: 447px;
+
+                            @media (max-width: 1080px) {
+                                top: 93px;
+                                left: 243px;
+                            }
+                        }
+
+                        #I2 {
+                            top: 343px;
+                            left: 385px;
+
+                            @media (max-width: 1080px) {
+                                top: 184px;
+                                left: 208px;
+
+
+                            }
+                        }
+
+                        /* Четвертий рівень */
+                        #J1 {
+                            top: 306px;
+                            left: 98px;
+
+                            @media (max-width: 1080px) {
+                                top: 163.5px;
+                                left: 48.5px;
+
+                            }
+                        }
+
+                        #N1 {
+                            top: 306px;
+                            left: 536px;
+
+                            @media (max-width: 1080px) {
+                                top: 164px;
+                                left: 292px;
+                            }
+                        }
+
+                        #K1 {
+                            top: 154px;
+                            left: 160px;
+
+                            @media (max-width: 1080px) {
+                                top: 80px;
+                                left: 83px;
+
+
+                            }
+                        }
+
+                        #O1 {
+                            top: 459px;
+                            left: 473px;
+
+                            @media (max-width: 1080px) {
+                                top: 249px;
+                                left: 257px;
+                            }
+                        }
+
+                        #L1 {
+                            top: 96px;
+                            left: 315px;
+
+                            @media (max-width: 1080px) {
+                                top: 47px;
+                                left: 169.5px;
+
+
+                            }
+                        }
+
+                        #P1 {
+                            top: 520px;
+                            left: 317px;
+
+                            @media (max-width: 1080px) {
+                                top: 282px;
+                                left: 170px;
+
+                            }
+                        }
+
+                        #M1 {
+                            top: 154px;
+                            left: 474px;
+
+                            @media (max-width: 1080px) {
+                                top: 80px;
+                                left: 257px;
+
+                            }
+                        }
+
+                        #Q1 {
+                            top: 460px;
+                            left: 161px;
+
+                            @media (max-width: 1080px) {
+                                top: 249px;
+                                left: 83.5px;
+
+                            }
+                        }
+
+                        #R {
+                            top: 306px;
+                            left: 220px;
+
+                            @media (max-width: 1080px) {
+                                top: 164px;
+                                left: 116px;
+
+                            }
+                        }
+
+                        #S {
+                            top: 209px;
+                            left: 316px;
+
+                            @media (max-width: 1080px) {
+                                top: 110px;
+                                left: 170px;
+
+                            }
+                        }
+
+                        #T {
+                            top: 307px;
+                            left: 412px;
+
+                            @media (max-width: 1080px) {
+                                top: 164px;
+                                left: 223px;
+
+                            }
+                        }
+
+                        #T1 {
+                            top: 403px;
+                            left: 317px;
+
+                            @media (max-width: 1080px) {
+                                top: 217px;
+                                left: 170px;
+
+                            }
+                        }
+
+                        #T2 {
+                            top: 398px;
+                            left: 413px;
+
+                            @media (max-width: 1080px) {
+                                top: 214.5px;
+                                left: 223px;
+
+                            }
+                        }
+
+                        #T3 {
+                            top: 442px;
+                            left: 364px;
+
+                            @media (max-width: 1080px) {
+                                top: 239px;
+                                left: 196.5px;
+
+                            }
+                        }
+
+                        #T4 {
+                            top: 354px;
+                            left: 455px;
+
+                            @media (max-width: 1080px) {
+                                top: 190px;
+                                left: 247px;
+                            }
+                        }
+
+                        @media (max-width: 1080px) {}
+
+                    }
+                }
             }
         }
 
-        .results_content_matrix_wrapper {
-            position: relative;
-            // border: 1px solid red;
-            max-width: 663px;
 
-            .results_content_matrix {
-                max-width: 663px;
 
+        /*******************health_card**********************/
+
+        .health_card {
+            // border: 1px solid rgb(101, 51, 194);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            padding-top: 35px;
+
+            .health_card_wrapper {
                 // border: 1px solid green;
-                @media (max-width: 1080px) {
-                    width: 368px;
-                }
-            }
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                max-width: 650px;
 
-            #resultsContent {
-                position: relative;
-                top: 0;
-
-                .level-1 {
-                    position: absolute;
+                h2 {
+                    width: 808px;
+                    height: 32px;
+                    font-family: "Cormorant SC", serif;
                     font-weight: 700;
                     font-style: bold;
-                    font-size: 20px;
-                    width: 45px;
-                    height: 45px;
-                    border-radius: 50%;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
+                    font-size: 32px;
+                    margin-bottom: 20px;
+                    color: $primary-color;
 
                     @media (max-width: 1080px) {
-                        font-size: 16px;
+                        width: 358px;
+                        font-size: 24px;
                     }
                 }
 
-                .level-2 {
-                    text-align: center;
-                    position: absolute;
-                    font-weight: 400;
-                    font-style: normal;
-                    font-size: 20px;
-                    width: 45px;
-                    height: 45px;
-                    border-radius: 50%;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
+                .health_card_wrapper_img {
+                    max-width: 580px;
 
                     @media (max-width: 1080px) {
-                        font-size: 16px;
+                        width: 358px;
                     }
                 }
 
-                .level-3 {
-                    position: absolute;
-                    font-weight: 400;
-                    font-style: normal;
+                #healthCardResults {
+                    position: relative;
+                    font-weight: 700;
                     font-size: 16px;
-                    width: 27px;
-                    height: 27px;
-                    border-radius: 50%;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
+                    font-family: "Cormorant SC", serif;
 
-                    @media (max-width: 1080px) {
-                        font-size: 13px;
-                    }
-                }
 
-                .level-4 {
-                    position: absolute;
-                    font-weight: 400;
-                    font-style: normal;
-                    font-size: 16px;
-                    width: 27px;
-                    height: 27px;
-                    border-radius: 50%;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
+                    div {
+                        position: absolute;
 
-                    @media (max-width: 1080px) {
-                        font-size: 13px;
-                    }
-                }
-
-                /* Перший рівень */
-                /* 📏 Пропорційне масштабування: 358 / 663 = 0.5398 */
-
-                /* 📏 Масштаб 0.5398 + зсув top -5px, left -10px */
-
-                #A {
-                    top: 297px;
-                    left: 46px;
-
-                    @media (max-width: 1080px) {
-                        top: 155.3px;
-                        left: 14.8px;
-                    }
-                }
-
-                #B {
-                    top: 50px;
-                    left: 307px;
-
-                    @media (max-width: 1080px) {
-                        top: 18px;
-                        left: 160px;
-                    }
-                }
-
-                #C {
-                    top: 297px;
-                    left: 568px;
-
-                    @media (max-width: 1080px) {
-                        top: 155px;
-                        left: 306px;
-                    }
-                }
-
-                #D {
-                    top: 546px;
-                    left: 307px;
-
-                    @media (max-width: 1080px) {
-                        top: 293px;
-                        left: 160px;
-                    }
-                }
-
-                /* Другий рівень */
-                #E {
-                    top: 116px;
-                    left: 122px;
-
-                    @media (max-width: 1080px) {
-                        top: 54px;
-                        left: 57px;
-                    }
-                }
-
-                #F {
-                    top: 116px;
-                    left: 491px;
-
-                    @media (max-width: 1080px) {
-                        top: 54px;
-                        left: 263px;
-                    }
-                }
-
-                #G {
-                    top: 479px;
-                    left: 491px;
-
-                    @media (max-width: 1080px) {
-                        top: 256px;
-                        left: 263px;
-                    }
-                }
-
-                #H {
-                    top: 479px;
-                    left: 122px;
-
-                    @media (max-width: 1080px) {
-                        top: 255px;
-                        left: 58px;
-                    }
-                }
-
-                #I {
-                    top: 297px;
-                    left: 306px;
-
-                    @media (max-width: 1080px) {
-                        top: 155px;
-                        left: 161px;
-                    }
-                }
-
-                /* Третій рівень */
-                #I1 {
-                    top: 343px;
-                    left: 348px;
-
-                    @media (max-width: 1080px) {
-                        top: 184px;
-                        left: 187px;
-                    }
-                }
-
-                #N {
-                    top: 306px;
-                    left: 501px;
-
-                    @media (max-width: 1080px) {
-                        top: 163px;
-                        left: 272px;
-                    }
-                }
-
-                #J {
-                    top: 306px;
-                    left: 131px;
-
-                    @media (max-width: 1080px) {
-                        top: 163px;
-                        left: 67px;
-                    }
-                }
-
-                #O {
-                    top: 435px;
-                    left: 449px;
-
-                    @media (max-width: 1080px) {
-                        top: 235px;
-                        left: 243px;
-                    }
-                }
-
-                #K {
-                    top: 179px;
-                    left: 184px;
-
-                    @media (max-width: 1080px) {
-                        top: 93px;
-                        left: 96px;
-                    }
-                }
-
-                #P {
-                    top: 489px;
-                    left: 316px;
-
-                    @media (max-width: 1080px) {
-                        top: 265px;
-                        left: 170px;
-                    }
-                }
-
-                #L {
-                    top: 125px;
-                    left: 315px;
-
-                    @media (max-width: 1080px) {
-                        top: 63px;
-                        left: 169px;
+                        @media (max-width: 1080px) {
+                            // border: 1px solid red;
+                            width: 33px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                        }
 
                     }
-                }
 
-                #Q {
-                    top: 435px;
-                    left: 184px;
 
-                    @media (max-width: 1080px) {
-                        top: 235px;
-                        left: 96.5px;
+                    /* Sahasrara */
+                    #sahasrara1 {
+                        top: 67px;
+                        left: 285px;
 
+                        @media (max-width: 1080px) {
+                            top: 62px;
+                            left: 172px;
+                        }
                     }
-                }
 
-                #M {
-                    top: 178px;
-                    left: 447px;
+                    #sahasrara2 {
+                        top: 67px;
+                        left: 400px;
 
-                    @media (max-width: 1080px) {
-                        top: 93px;
-                        left: 243px;
+                        @media (max-width: 1080px) {
+                            top: 62px;
+                            left: 240px;
+                        }
                     }
-                }
 
-                #I2 {
-                    top: 343px;
-                    left: 385px;
+                    #sahasrara3 {
+                        top: 67px;
+                        left: 515px;
 
-                    @media (max-width: 1080px) {
-                        top: 184px;
-                        left: 208px;
-
-
+                        @media (max-width: 1080px) {
+                            top: 62px;
+                            left: 309px;
+                        }
                     }
-                }
 
-                /* Четвертий рівень */
-                #J1 {
-                    top: 306px;
-                    left: 98px;
+                    /* Ajna */
+                    #ajna1 {
+                        top: 124px;
+                        left: 285px;
 
-                    @media (max-width: 1080px) {
-                        top: 163.5px;
-                        left: 48.5px;
-
+                        @media (max-width: 1080px) {
+                            top: 120px;
+                            left: 172px;
+                        }
                     }
-                }
 
-                #N1 {
-                    top: 306px;
-                    left: 536px;
+                    #ajna2 {
+                        top: 124px;
+                        left: 400px;
 
-                    @media (max-width: 1080px) {
-                        top: 164px;
-                        left: 292px;
+                        @media (max-width: 1080px) {
+                            top: 120px;
+                            left: 240px;
+                        }
                     }
-                }
 
-                #K1 {
-                    top: 154px;
-                    left: 160px;
+                    #ajna3 {
+                        top: 124px;
+                        left: 515px;
 
-                    @media (max-width: 1080px) {
-                        top: 80px;
-                        left: 83px;
-
-
+                        @media (max-width: 1080px) {
+                            top: 120px;
+                            left: 309px;
+                        }
                     }
-                }
 
-                #O1 {
-                    top: 459px;
-                    left: 473px;
+                    /* Vishuddha */
+                    #vishuddha1 {
+                        top: 182px;
+                        left: 285px;
 
-                    @media (max-width: 1080px) {
-                        top: 249px;
-                        left: 257px;
+                        @media (max-width: 1080px) {
+                            top: 180px;
+                            left: 172px;
+                        }
                     }
-                }
 
-                #L1 {
-                    top: 96px;
-                    left: 315px;
+                    #vishuddha2 {
+                        top: 182px;
+                        left: 400px;
 
-                    @media (max-width: 1080px) {
-                        top: 47px;
-                        left: 169.5px;
-
-
+                        @media (max-width: 1080px) {
+                            top: 180px;
+                            left: 240px;
+                        }
                     }
-                }
 
-                #P1 {
-                    top: 520px;
-                    left: 317px;
+                    #vishuddha3 {
+                        top: 182px;
+                        left: 515px;
 
-                    @media (max-width: 1080px) {
-                        top: 282px;
-                        left: 170px;
-
+                        @media (max-width: 1080px) {
+                            top: 180px;
+                            left: 309px;
+                        }
                     }
-                }
 
-                #M1 {
-                    top: 154px;
-                    left: 474px;
+                    /* Anahata */
+                    #anahata1 {
+                        top: 240px;
+                        left: 285px;
 
-                    @media (max-width: 1080px) {
-                        top: 80px;
-                        left: 257px;
-
+                        @media (max-width: 1080px) {
+                            top: 243px;
+                            left: 172px;
+                        }
                     }
-                }
 
-                #Q1 {
-                    top: 460px;
-                    left: 161px;
+                    #anahata2 {
+                        top: 240px;
+                        left: 400px;
 
-                    @media (max-width: 1080px) {
-                        top: 249px;
-                        left: 83.5px;
-
+                        @media (max-width: 1080px) {
+                            top: 243px;
+                            left: 240px;
+                        }
                     }
-                }
 
-                #R {
-                    top: 306px;
-                    left: 220px;
+                    #anahata3 {
+                        top: 240px;
+                        left: 515px;
 
-                    @media (max-width: 1080px) {
-                        top: 164px;
-                        left: 116px;
-
+                        @media (max-width: 1080px) {
+                            top: 243px;
+                            left: 309px;
+                        }
                     }
-                }
 
-                #S {
-                    top: 209px;
-                    left: 316px;
+                    /* Manipura */
+                    #manipur1 {
+                        top: 297px;
+                        left: 285px;
 
-                    @media (max-width: 1080px) {
-                        top: 110px;
-                        left: 170px;
-
+                        @media (max-width: 1080px) {
+                            top: 306px;
+                            left: 172px;
+                        }
                     }
-                }
 
-                #T {
-                    top: 307px;
-                    left: 412px;
+                    #manipur2 {
+                        top: 297px;
+                        left: 400px;
 
-                    @media (max-width: 1080px) {
-                        top: 164px;
-                        left: 223px;
-
+                        @media (max-width: 1080px) {
+                            top: 306px;
+                            left: 240px;
+                        }
                     }
-                }
 
-                #T1 {
-                    top: 403px;
-                    left: 317px;
+                    #manipur3 {
+                        top: 297px;
+                        left: 515px;
 
-                    @media (max-width: 1080px) {
-                        top: 217px;
-                        left: 170px;
-
+                        @media (max-width: 1080px) {
+                            top: 306px;
+                            left: 309px;
+                        }
                     }
-                }
 
-                #T2 {
-                    top: 398px;
-                    left: 413px;
+                    /* Svadhisthana */
+                    #svadhisthana1 {
+                        top: 355px;
+                        left: 285px;
 
-                    @media (max-width: 1080px) {
-                        top: 214.5px;
-                        left: 223px;
-
+                        @media (max-width: 1080px) {
+                            top: 369px;
+                            left: 172px;
+                        }
                     }
-                }
 
-                #T3 {
-                    top: 442px;
-                    left: 364px;
+                    #svadhisthana2 {
+                        top: 355px;
+                        left: 400px;
 
-                    @media (max-width: 1080px) {
-                        top: 239px;
-                        left: 196.5px;
-
+                        @media (max-width: 1080px) {
+                            top: 369px;
+                            left: 240px;
+                        }
                     }
-                }
 
-                #T4 {
-                    top: 354px;
-                    left: 455px;
+                    #svadhisthana3 {
+                        top: 355px;
+                        left: 515px;
 
-                    @media (max-width: 1080px) {
-                        top: 190px;
-                        left: 247px;
+                        @media (max-width: 1080px) {
+                            top: 369px;
+                            left: 309px;
+                        }
                     }
+
+                    /* Muladhara */
+                    #muladhara1 {
+                        top: 412px;
+                        left: 285px;
+
+                        @media (max-width: 1080px) {
+                            top: 432px;
+                            left: 172px;
+                        }
+                    }
+
+                    #muladhara2 {
+                        top: 412px;
+                        left: 400px;
+
+                        @media (max-width: 1080px) {
+                            top: 432px;
+                            left: 240px;
+                        }
+                    }
+
+                    #muladhara3 {
+                        top: 412px;
+                        left: 515px;
+
+                        @media (max-width: 1080px) {
+                            top: 432px;
+                            left: 309px;
+                        }
+                    }
+
+                    /* Summation */
+                    #sum1 {
+                        top: 469px;
+                        left: 285px;
+
+                        @media (max-width: 1080px) {
+                            top: 495px;
+                            left: 172px;
+                        }
+                    }
+
+                    #sum2 {
+                        top: 469px;
+                        left: 400px;
+
+                        @media (max-width: 1080px) {
+                            top: 495px;
+                            left: 240px;
+                        }
+                    }
+
+                    #sum3 {
+                        top: 469px;
+                        left: 515px;
+
+                        @media (max-width: 1080px) {
+                            top: 495px;
+                            left: 309px;
+                        }
+                    }
+
                 }
-
-                @media (max-width: 1080px) {}
-
             }
         }
+
     }
+
+
 }
 
 
-/*******************health_card**********************/
 
-.health_card {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-top: 35px;
-
-    .health_card_wrapper {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
-        h2 {
-            width: 808px;
-            height: 32px;
-            font-family: "Cormorant SC", serif;
-            font-weight: 700;
-            font-style: bold;
-            font-size: 32px;
-            margin-bottom: 20px;
-            color: $primary-color;
-
-            @media (max-width: 1080px) {
-                width: 358px;
-            }
-        }
-
-        .health_card_wrapper_img {
-            max-width: 808px;
-
-            @media (max-width: 1080px) {
-                width: 358px;
-            }
-        }
-
-        #healthCardResults {
-            position: relative;
-            font-weight: 700;
-            font-size: 16px;
-
-
-            div {
-                position: absolute;
-
-                @media (max-width: 1080px) {
-                    // border: 1px solid red;
-                    width: 33px;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                }
-
-            }
-
-
-            /* Sahasrara */
-            #sahasrara1 {
-                top: 94px;
-                left: 0;
-
-                @media (max-width: 1080px) {
-                    top: 62px;
-                    left: -7px;
-                }
-            }
-
-            #sahasrara2 {
-                top: 94px;
-                left: 160px;
-
-                @media (max-width: 1080px) {
-                    top: 62px;
-                    left: 62px;
-                }
-            }
-
-            #sahasrara3 {
-                top: 94px;
-                left: 320px;
-
-                @media (max-width: 1080px) {
-                    top: 62px;
-                    left: 131px;
-                }
-            }
-
-            /* Ajna */
-            #ajna1 {
-                top: 174px;
-                left: 0;
-
-                @media (max-width: 1080px) {
-                    top: 120px;
-                    left: -7px;
-                }
-            }
-
-            #ajna2 {
-                top: 174px;
-                left: 160px;
-
-                @media (max-width: 1080px) {
-                    top: 120px;
-                    left: 62px;
-                }
-            }
-
-            #ajna3 {
-                top: 174px;
-                left: 320px;
-
-                @media (max-width: 1080px) {
-                    top: 120px;
-                    left: 131px;
-                }
-            }
-
-            /* Vishuddha */
-            #vishuddha1 {
-                top: 254px;
-                left: 0px;
-
-                @media (max-width: 1080px) {
-                    top: 180px;
-                    left: -7px;
-                }
-            }
-
-            #vishuddha2 {
-                top: 254px;
-                left: 160px;
-
-                @media (max-width: 1080px) {
-                    top: 180px;
-                    left: 62px;
-                }
-            }
-
-            #vishuddha3 {
-                top: 254px;
-                left: 320px;
-
-                @media (max-width: 1080px) {
-                    top: 180px;
-                    left: 131px;
-                }
-            }
-
-            /* Anahata */
-            #anahata1 {
-                top: 334px;
-                left: 0;
-
-                @media (max-width: 1080px) {
-                    top: 243px;
-                    left: -7px;
-                }
-            }
-
-            #anahata2 {
-                top: 334px;
-                left: 160px;
-
-                @media (max-width: 1080px) {
-                    top: 243px;
-                    left: 62px;
-                }
-            }
-
-            #anahata3 {
-                top: 334px;
-                left: 320px;
-
-                @media (max-width: 1080px) {
-                    top: 243px;
-                    left: 131px;
-                }
-            }
-
-            /* Manipura */
-            #manipur1 {
-                top: 414px;
-                left: 0;
-
-                @media (max-width: 1080px) {
-                    top: 306px;
-                    left: -7px;
-                }
-            }
-
-            #manipur2 {
-                top: 414px;
-                left: 160px;
-
-                @media (max-width: 1080px) {
-                    top: 306px;
-                    left: 62px;
-                }
-            }
-
-            #manipur3 {
-                top: 414px;
-                left: 320px;
-
-                @media (max-width: 1080px) {
-                    top: 306px;
-                    left: 131px;
-                }
-            }
-
-            /* Svadhisthana */
-            #svadhisthana1 {
-                top: 494px;
-                left: 0;
-
-                @media (max-width: 1080px) {
-                    top: 369px;
-                    left: -7px;
-                }
-            }
-
-            #svadhisthana2 {
-                top: 494px;
-                left: 160px;
-
-                @media (max-width: 1080px) {
-                    top: 369px;
-                    left: 62px;
-                }
-            }
-
-            #svadhisthana3 {
-                top: 494px;
-                left: 320px;
-
-                @media (max-width: 1080px) {
-                    top: 369px;
-                    left: 131px;
-                }
-            }
-
-            /* Muladhara */
-            #muladhara1 {
-                top: 574px;
-                left: 0;
-
-                @media (max-width: 1080px) {
-                    top: 432px;
-                    left: -7px;
-                }
-            }
-
-            #muladhara2 {
-                top: 574px;
-                left: 160px;
-
-                @media (max-width: 1080px) {
-                    top: 432px;
-                    left: 62px;
-                }
-            }
-
-            #muladhara3 {
-                top: 574px;
-                left: 320px;
-
-                @media (max-width: 1080px) {
-                    top: 432px;
-                    left: 131px;
-                }
-            }
-
-            /* Summation */
-            #sum1 {
-                top: 654px;
-                left: 0;
-
-                @media (max-width: 1080px) {
-                    top: 495px;
-                    left: -7px;
-                }
-            }
-
-            #sum2 {
-                top: 654px;
-                left: 160px;
-
-                @media (max-width: 1080px) {
-                    top: 495px;
-                    left: 62px;
-                }
-            }
-
-            #sum3 {
-                top: 654px;
-                left: 320px;
-
-                @media (max-width: 1080px) {
-                    top: 495px;
-                    left: 131px;
-                }
-            }
-
-        }
-    }
-}
 
 
 /***************life-map*******************/
@@ -1204,13 +1244,19 @@ body {
     &__block {
         font-size: 16px;
         line-height: 1.4;
+
+        .block-list {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
     }
 
     &__header {
         display: flex;
         align-items: center;
         font-weight: bold;
-        margin-bottom: 10px;
+        margin-bottom: 20px;
         font-family: "Cormorant SC", serif;
         color: $primary-color;
 
@@ -1219,12 +1265,30 @@ body {
         }
 
         span:last-child {
-            margin-left: 10px;
-            font-size: 20px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            // margin-left: 10px;
+            font-size: 17px;
+            height: 40px;
+            width: 100%;
+            border: 1px solid $primary-color;
+            border-radius: 35px;
+            padding-left: 20px;
+
+            @media (max-width: 1080px) {
+                // font-size: 14px;
+                font-size: 16px;
+                padding-left: 20px;
+            }
+
         }
     }
 
     &__list {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         list-style: none;
         padding: 0;
         margin: 0;
@@ -1237,8 +1301,17 @@ body {
         }
     }
 
+    &__list2 {
+        li {
+            font-family: "Cormorant SC", serif;
+            color: $primary-color;
+            font-weight: bold;
+        }
+    }
+
     &__circle {
-        display: inline-flex;
+        // display: inline-flex;
+        display: flex;
         align-items: center;
         justify-content: center;
         border: 2px solid #800060; // бордовий як на макеті
@@ -1246,28 +1319,64 @@ body {
         border-radius: 50%;
         width: 30px;
         height: 30px;
-        font-size: 16px;
+        font-size: 18px;
         font-weight: 700;
+        font-family: "Cormorant SC", serif;
         margin-right: 10px;
         flex-shrink: 0;
     }
 
     &__diamond {
-        text-align: center;
-        margin: 30px 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        max-width: 410px;
+        margin: 0px auto;
+        border: 1px solid #987733;
+        border-radius: 25px;
+        padding: 0 20px;
 
-        h3 {
-            font-size: 30px;
-            font-weight: 700;
-            font-family: "Cormorant SC", serif;
-            color: $primary-color;
-            margin-bottom: 5px;
+        .life-map__diamond_col1 {
+            img {
+                width: 95px;
+            }
         }
 
-        span {
-            font-size: 18px;
-            font-weight: bold;
+        .life-map__diamond_col2 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            #diamondSoul {
+                display: flex;
+                flex-direction: row;
+                gap: 8px;
+
+                span {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 21px;
+                }
+
+            }
+
+            h3 {
+                font-size: 22px;
+                font-weight: 700;
+                font-family: "Cormorant SC", serif;
+                color: $primary-color;
+                margin-bottom: 5px;
+            }
+
+            span {
+                font-size: 18px;
+                font-weight: bold;
+            }
         }
+
     }
 
     &__description {
@@ -1290,6 +1399,7 @@ body {
 /**********************************/
 #consultation-section {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 30px;
@@ -1300,36 +1410,19 @@ body {
     @media (max-width: 1080px) {
         flex-direction: column;
         padding: 10px 0;
-        ;
     }
 
-    .consultation-photo {
-        flex: 1;
-        max-width: 496px;
+    .consultation-1 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-width: 700px;
 
-        @media (max-width: 1080px) {
-            max-width: 358px;
-        }
-
-        img {
-            width: 100%;
-            height: auto;
-            border-radius: 0px;
-            display: block;
-        }
-    }
-
-    .consultation-content {
-        flex: 1;
-        color: #222;
-
-        @media (max-width: 1080px) {
-            width: 390px;
-            padding-left: 15px;
-
-        }
-
-        .consultation-title {
+        .consultation-1_h2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             font-size: 32px;
             font-weight: 700;
             font-family: "Cormorant SC", serif;
@@ -1337,131 +1430,210 @@ body {
             margin-bottom: 45px;
             border-left: 4px solid #8E3B67;
             padding-left: 8px;
+            text-align: center;
+            width: 555px;
+            height: 52px;
+
+            @media (max-width: 1080px) {
+                font-size: 30px;
+                width: 358px;
+                height: 70px;
+            }
+        }
+
+        .consultation-1_p {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+    }
+
+
+
+
+    .consultation-2 {
+        margin-top: 70px;
+
+        .consultation-title {
+            font-size: 32px;
+            font-weight: 700;
+            font-family: "Cormorant SC", serif;
+            color: #2E2B75;
+            margin-bottom: 25px;
+            border-left: 4px solid #8E3B67;
+            padding-left: 22px;
+            height: 52px;
 
             @media (max-width: 1080px) {
                 font-size: 26px;
-                width: 90%;
-
+                width: 75%;
+                margin: 0 auto;
+                // border: 1px solid red;
+                height: 70px;
+                text-align: start;
 
             }
         }
 
-        .consultation-description {
-            margin-bottom: 15px;
-            line-height: 1.6;
-            font-size: 20px;
-            font-weight: 400;
-            max-width: 708px;
+
+        .consultation-2_content-and-photo {
+            display: flex;
+            flex-direction: row;
 
             @media (max-width: 1080px) {
-                font-size: 16px;
-            }
-        }
-
-        .consultation-subtitle {
-            margin-bottom: 15px;
-            font-weight: 700;
-            font-size: 20px;
-        }
-
-        .consultation-subtitle2 {
-            font-size: 20px;
-            margin-bottom: 15px;
-        }
-
-        .consultation-list {
-            list-style: none;
-            padding: 0;
-            margin: 0 0 25px 0;
-
-            li {
-                display: flex;
+                flex-direction: column;
+                justify-content: center;
                 align-items: center;
-                font-size: 16px;
-                margin-bottom: 10px;
-                line-height: 1.5;
-                position: relative;
-                padding-left: 40px;
-                height: 34px;
+                margin-top: 35px;
+            }
 
-                &::before {
-                    content: "";
-                    position: absolute;
-                    left: 0;
-                    top: 0px;
-                    width: 34px;
-                    height: 34px;
-                    background: url("../assets/img/icon.png") no-repeat center center;
-                    background-size: contain;
+            .consultation-photo {
+                max-width: 430px;
+
+                @media (max-width: 1080px) {
+                    max-width: 358px;
+                    margin-bottom: 20px;
                 }
-            }
-        }
 
-        .consultation-button {
-            position: relative;
-            z-index: 1;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            padding: 14px 34px;
-            background: linear-gradient(45deg, #9F316B, #770f6e);
-            color: #fff;
-            text-decoration: none;
-            border-radius: 0px;
-            max-width: 521px;
-            height: 55px;
-            font-size: 20px;
-            font-weight: 700;
-            font-family: "Cormorant SC", serif;
-            margin-top: 30px;
-            transition: all 0.3s ease;
-
-            &::before {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background: $btn-hover-gradient2;
-                opacity: 0;
-                z-index: -1;
-                transition: opacity 0.3s ease;
-            }
-
-            &:hover {
-                color: #fff;
-
-                &::before {
-                    opacity: 1;
+                img {
+                    width: 100%;
+                    height: auto;
+                    border-radius: 0px;
+                    display: block;
                 }
             }
 
-            @media (max-width: 1080px) {
-                font-size: 16px;
-                width: 358px;
-                height: 49px;
+            .consultation_content {
+                // border: 1px solid red;
+                padding-left: 25px;
+
+                @media (max-width: 1080px) {
+                    width: 390px;
+                    padding-left: 15px;
+                }
+
+                // .consultation-description {
+                //     margin-bottom: 15px;
+                //     line-height: 1.6;
+                //     font-size: 20px;
+                //     font-weight: 400;
+                //     max-width: 708px;
+
+                //     @media (max-width: 1080px) {
+                //         font-size: 16px;
+                //     }
+                // }
+
+                // .consultation-subtitle {
+                //     margin-bottom: 15px;
+                //     font-weight: 700;
+                //     font-size: 20px;
+                // }
+
+                .consultation-subtitle2 {
+                    font-size: 20px;
+                    margin-bottom: 15px;
+                }
+
+                .consultation-list {
+                    list-style: none;
+                    padding: 0;
+                    margin: 0 0 25px 0;
+
+                    li {
+                        display: flex;
+                        align-items: center;
+                        font-size: 16px;
+                        margin-bottom: 10px;
+                        line-height: 1.5;
+                        position: relative;
+                        padding-left: 40px;
+                        height: 34px;
+
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            left: 0;
+                            top: 0px;
+                            width: 34px;
+                            height: 34px;
+                            background: url("../assets/img/icon.png") no-repeat center center;
+                            background-size: contain;
+                        }
+                    }
+                }
+
+                .consultation-button {
+                    position: relative;
+                    z-index: 1;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    overflow: hidden;
+                    padding: 14px 34px;
+                    background: linear-gradient(45deg, #9F316B, #770f6e);
+                    color: #fff;
+                    text-decoration: none;
+                    border-radius: 0px;
+                    width: 375px;
+                    height: 55px;
+                    font-size: 20px;
+                    font-weight: 700;
+                    font-family: "Cormorant SC", serif;
+                    margin-top: 14px;
+                    transition: all 0.3s ease;
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        background: $btn-hover-gradient2;
+                        opacity: 0;
+                        z-index: -1;
+                        transition: opacity 0.3s ease;
+                    }
+
+                    &:hover {
+                        color: #fff;
+
+                        &::before {
+                            opacity: 1;
+                        }
+                    }
+
+                    @media (max-width: 1080px) {
+                        font-size: 16px;
+                        width: 358px;
+                        height: 49px;
+                    }
+                }
+
+                .consultation-button .text {
+                    display: inline;
+                }
+
+                @media (max-width: 1080px) {
+                    .consultation-button .text {
+                        display: none;
+                        /* ховаємо оригінальний текст */
+                    }
+
+                    .consultation-button::after {
+                        content: "Консультація IMARIA MASTER";
+                        /* новий текст */
+                    }
+                }
+
             }
         }
 
-        .consultation-button .text {
-            display: inline;
-        }
-
-        @media (max-width: 1080px) {
-            .consultation-button .text {
-                display: none;
-                /* ховаємо оригінальний текст */
-            }
-
-            .consultation-button::after {
-                content: "Консультація IMARIA MASTER";
-                /* новий текст */
-            }
-        }
 
     }
+
+
 }
 
 /**********************************/

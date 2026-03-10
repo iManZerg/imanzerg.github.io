@@ -4,9 +4,12 @@ const dateInput = document.getElementById("birthdate");
 const nameError = document.getElementById("nameError");
 const dateError = document.getElementById("dateError");
 const submitBtn = document.getElementById("submitBtn");
-const resultsSection = document.getElementById("results");
+const resultsSection = document.getElementById("result");
+const h2_result = document.getElementById("main-wrapper_h2");
+
 const resultsContent = document.getElementById("resultsContent");
 const healthCardResults = document.getElementById("healthCardResults");
+
 
 const circle1 = document.getElementById("circle1");
 const circle2 = document.getElementById("circle2");
@@ -281,11 +284,11 @@ form.addEventListener("submit", function (e) {
   circle10.innerHTML = `${reduceTo22(reduceTo22(results.E + results.G) + reduceTo22(results.F + results.H))}`;
   circle11.innerHTML = `${reduceTo22(reduceTo22(reduceTo22(results.B + results.D) + reduceTo22(results.A + results.C)) + reduceTo22(reduceTo22(results.E + results.G) + reduceTo22(results.F + results.H)))}`;
 
-  diamondSoul.innerHTML = `${results.healthCardSum2} ${results.healthCardSum2} ${reduceTo22(results.healthCardSum2 + results.healthCardSum2)}`
+  diamondSoul.innerHTML = `<span class="life-map__circle">${results.healthCardSum2}</span> <span class="life-map__circle">${results.healthCardSum2}</span> <span class="life-map__circle">${reduceTo22(results.healthCardSum2 + results.healthCardSum2)}</span>`
 
 
 
-  resultsSection.scrollIntoView({ behavior: "smooth" });
+  h2_result.scrollIntoView({ behavior: "smooth" });
 });
 
 // Бургер меню

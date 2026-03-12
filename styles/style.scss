@@ -438,7 +438,7 @@ body {
                             display: flex;
                             justify-content: center;
                             align-items: center;
-                            font-family: "Cormorant SC", serif;
+                            font-family: "Noto Serif Display", serif;
 
                             @media (max-width: 1080px) {
                                 font-size: 16px;
@@ -457,7 +457,7 @@ body {
                             display: flex;
                             justify-content: center;
                             align-items: center;
-                            font-family: "Cormorant SC", serif;
+                            font-family: "Noto Serif Display", serif;
 
                             @media (max-width: 1080px) {
                                 font-size: 16px;
@@ -475,7 +475,7 @@ body {
                             display: flex;
                             justify-content: center;
                             align-items: center;
-                            font-family: "Cormorant SC", serif;
+                            font-family: "Noto Serif Display", serif;
 
                             @media (max-width: 1080px) {
                                 font-size: 13px;
@@ -493,7 +493,7 @@ body {
                             display: flex;
                             justify-content: center;
                             align-items: center;
-                            font-family: "Cormorant SC", serif;
+                            font-family: "Noto Serif Display", serif;
 
                             @media (max-width: 1080px) {
                                 font-size: 13px;
@@ -900,7 +900,7 @@ body {
                     font-weight: 700;
                     font-style: bold;
                     font-size: 32px;
-                    margin-bottom: 20px;
+                    margin-bottom: 35px;
                     color: $primary-color;
 
                     @media (max-width: 1080px) {
@@ -917,15 +917,22 @@ body {
                     }
                 }
 
+
+
                 #healthCardResults {
                     position: relative;
                     font-weight: 700;
                     font-size: 16px;
-                    font-family: "Cormorant SC", serif;
+                    font-family: "Noto Serif Display", serif;
 
 
                     div {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
                         position: absolute;
+                        // border: 1px solid red;
+                        width: 33px;
 
                         @media (max-width: 1080px) {
                             // border: 1px solid red;
@@ -941,7 +948,7 @@ body {
                     /* Sahasrara */
                     #sahasrara1 {
                         top: 67px;
-                        left: 285px;
+                        left: 279px;
 
                         @media (max-width: 1080px) {
                             top: 62px;
@@ -951,7 +958,7 @@ body {
 
                     #sahasrara2 {
                         top: 67px;
-                        left: 400px;
+                        left: 393px;
 
                         @media (max-width: 1080px) {
                             top: 62px;
@@ -961,7 +968,7 @@ body {
 
                     #sahasrara3 {
                         top: 67px;
-                        left: 515px;
+                        left: 509px;
 
                         @media (max-width: 1080px) {
                             top: 62px;
@@ -972,7 +979,7 @@ body {
                     /* Ajna */
                     #ajna1 {
                         top: 124px;
-                        left: 285px;
+                        left: 279px;
 
                         @media (max-width: 1080px) {
                             top: 120px;
@@ -982,7 +989,7 @@ body {
 
                     #ajna2 {
                         top: 124px;
-                        left: 400px;
+                        left: 393px;
 
                         @media (max-width: 1080px) {
                             top: 120px;
@@ -992,7 +999,7 @@ body {
 
                     #ajna3 {
                         top: 124px;
-                        left: 515px;
+                        left: 509px;
 
                         @media (max-width: 1080px) {
                             top: 120px;
@@ -1003,7 +1010,7 @@ body {
                     /* Vishuddha */
                     #vishuddha1 {
                         top: 182px;
-                        left: 285px;
+                        left: 279px;
 
                         @media (max-width: 1080px) {
                             top: 180px;
@@ -1013,7 +1020,7 @@ body {
 
                     #vishuddha2 {
                         top: 182px;
-                        left: 400px;
+                        left: 393px;
 
                         @media (max-width: 1080px) {
                             top: 180px;
@@ -1023,7 +1030,7 @@ body {
 
                     #vishuddha3 {
                         top: 182px;
-                        left: 515px;
+                        left: 509px;
 
                         @media (max-width: 1080px) {
                             top: 180px;
@@ -1034,7 +1041,7 @@ body {
                     /* Anahata */
                     #anahata1 {
                         top: 240px;
-                        left: 285px;
+                        left: 279px;
 
                         @media (max-width: 1080px) {
                             top: 243px;
@@ -1044,7 +1051,7 @@ body {
 
                     #anahata2 {
                         top: 240px;
-                        left: 400px;
+                        left: 393px;
 
                         @media (max-width: 1080px) {
                             top: 243px;
@@ -1054,7 +1061,7 @@ body {
 
                     #anahata3 {
                         top: 240px;
-                        left: 515px;
+                        left: 509px;
 
                         @media (max-width: 1080px) {
                             top: 243px;
@@ -1065,7 +1072,7 @@ body {
                     /* Manipura */
                     #manipur1 {
                         top: 297px;
-                        left: 285px;
+                        left: 279px;
 
                         @media (max-width: 1080px) {
                             top: 306px;
@@ -1075,7 +1082,7 @@ body {
 
                     #manipur2 {
                         top: 297px;
-                        left: 400px;
+                        left: 393px;
 
                         @media (max-width: 1080px) {
                             top: 306px;
@@ -1085,7 +1092,7 @@ body {
 
                     #manipur3 {
                         top: 297px;
-                        left: 515px;
+                        left: 509px;
 
                         @media (max-width: 1080px) {
                             top: 306px;
@@ -1096,7 +1103,7 @@ body {
                     /* Svadhisthana */
                     #svadhisthana1 {
                         top: 355px;
-                        left: 285px;
+                        left: 279px;
 
                         @media (max-width: 1080px) {
                             top: 369px;
@@ -1106,7 +1113,7 @@ body {
 
                     #svadhisthana2 {
                         top: 355px;
-                        left: 400px;
+                        left: 393px;
 
                         @media (max-width: 1080px) {
                             top: 369px;
@@ -1116,7 +1123,7 @@ body {
 
                     #svadhisthana3 {
                         top: 355px;
-                        left: 515px;
+                        left: 509px;
 
                         @media (max-width: 1080px) {
                             top: 369px;
@@ -1127,7 +1134,7 @@ body {
                     /* Muladhara */
                     #muladhara1 {
                         top: 412px;
-                        left: 285px;
+                        left: 279px;
 
                         @media (max-width: 1080px) {
                             top: 432px;
@@ -1137,7 +1144,7 @@ body {
 
                     #muladhara2 {
                         top: 412px;
-                        left: 400px;
+                        left: 393px;
 
                         @media (max-width: 1080px) {
                             top: 432px;
@@ -1147,7 +1154,7 @@ body {
 
                     #muladhara3 {
                         top: 412px;
-                        left: 515px;
+                        left: 509px;
 
                         @media (max-width: 1080px) {
                             top: 432px;
@@ -1158,7 +1165,7 @@ body {
                     /* Summation */
                     #sum1 {
                         top: 469px;
-                        left: 285px;
+                        left: 279px;
 
                         @media (max-width: 1080px) {
                             top: 495px;
@@ -1168,7 +1175,7 @@ body {
 
                     #sum2 {
                         top: 469px;
-                        left: 400px;
+                        left: 393px;
 
                         @media (max-width: 1080px) {
                             top: 495px;
@@ -1178,7 +1185,7 @@ body {
 
                     #sum3 {
                         top: 469px;
-                        left: 515px;
+                        left: 509px;
 
                         @media (max-width: 1080px) {
                             top: 495px;
@@ -1219,7 +1226,7 @@ body {
         text-align: left;
         font-weight: 700;
         font-size: 32px;
-        margin-bottom: 20px;
+        margin-bottom: 35px;
         font-family: "Cormorant SC", serif;
         color: $primary-color;
 
@@ -1319,9 +1326,9 @@ body {
         border-radius: 50%;
         width: 30px;
         height: 30px;
-        font-size: 18px;
+        font-size: 17px;
         font-weight: 700;
-        font-family: "Cormorant SC", serif;
+        font-family: "Noto Serif Display", serif;
         margin-right: 10px;
         flex-shrink: 0;
     }
@@ -1358,7 +1365,8 @@ body {
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    font-size: 21px;
+                    font-size: 17px;
+                    font-family: "Noto Serif Display", serif;
                 }
 
             }
@@ -1368,7 +1376,7 @@ body {
                 font-weight: 700;
                 font-family: "Cormorant SC", serif;
                 color: $primary-color;
-                margin-bottom: 5px;
+                margin-bottom: 25px;
             }
 
             span {
@@ -1505,7 +1513,7 @@ body {
 
             .consultation_content {
                 // border: 1px solid red;
-                padding-left: 25px;
+                padding-left: 70px;
 
                 @media (max-width: 1080px) {
                     width: 390px;

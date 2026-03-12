@@ -493,7 +493,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-family: "Cormorant SC", serif;
+  font-family: "Noto Serif Display", serif;
 }
 @media (max-width: 1080px) {
   .main-wrapper .main-wrapper_container .results .results_content .results_content_matrix_wrapper #resultsContent .level-1 {
@@ -518,7 +518,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-family: "Cormorant SC", serif;
+  font-family: "Noto Serif Display", serif;
 }
 @media (max-width: 1080px) {
   .main-wrapper .main-wrapper_container .results .results_content .results_content_matrix_wrapper #resultsContent .level-2 {
@@ -542,7 +542,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-family: "Cormorant SC", serif;
+  font-family: "Noto Serif Display", serif;
 }
 @media (max-width: 1080px) {
   .main-wrapper .main-wrapper_container .results .results_content .results_content_matrix_wrapper #resultsContent .level-3 {
@@ -566,7 +566,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-family: "Cormorant SC", serif;
+  font-family: "Noto Serif Display", serif;
 }
 @media (max-width: 1080px) {
   .main-wrapper .main-wrapper_container .results .results_content .results_content_matrix_wrapper #resultsContent .level-4 {
@@ -969,7 +969,7 @@ body {
   font-weight: 700;
   font-style: bold;
   font-size: 32px;
-  margin-bottom: 20px;
+  margin-bottom: 35px;
   color: #2E2B75;
 }
 @media (max-width: 1080px) {
@@ -990,10 +990,20 @@ body {
   position: relative;
   font-weight: 700;
   font-size: 16px;
-  font-family: "Cormorant SC", serif;
+  font-family: "Noto Serif Display", serif;
 }
 .main-wrapper .main-wrapper_container .health_card .health_card_wrapper #healthCardResults div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: absolute;
+  width: 33px;
 }
 @media (max-width: 1080px) {
   .main-wrapper .main-wrapper_container .health_card .health_card_wrapper #healthCardResults div {
@@ -1014,7 +1024,7 @@ body {
 }
 .main-wrapper .main-wrapper_container .health_card .health_card_wrapper #healthCardResults #sahasrara1 {
   top: 67px;
-  left: 285px;
+  left: 279px;
 }
 @media (max-width: 1080px) {
   .main-wrapper .main-wrapper_container .health_card .health_card_wrapper #healthCardResults #sahasrara1 {
@@ -1024,7 +1034,7 @@ body {
 }
 .main-wrapper .main-wrapper_container .health_card .health_card_wrapper #healthCardResults #sahasrara2 {
   top: 67px;
-  left: 400px;
+  left: 393px;
 }
 @media (max-width: 1080px) {
   .main-wrapper .main-wrapper_container .health_card .health_card_wrapper #healthCardResults #sahasrara2 {
@@ -1034,7 +1044,7 @@ body {
 }
 .main-wrapper .main-wrapper_container .health_card .health_card_wrapper #healthCardResults #sahasrara3 {
   top: 67px;
-  left: 515px;
+  left: 509px;
 }
 @media (max-width: 1080px) {
   .main-wrapper .main-wrapper_container .health_card .health_card_wrapper #healthCardResults #sahasrara3 {
@@ -1047,7 +1057,7 @@ body {
 }
 .main-wrapper .main-wrapper_container .health_card .health_card_wrapper #healthCardResults #ajna1 {
   top: 124px;
-  left: 285px;
+  left: 279px;
 }
 @media (max-width: 1080px) {
   .main-wrapper .main-wrapper_container .health_card .health_card_wrapper #healthCardResults #ajna1 {
@@ -1057,7 +1067,7 @@ body {
 }
 .main-wrapper .main-wrapper_container .health_card .health_card_wrapper #healthCardResults #ajna2 {
   top: 124px;
-  left: 400px;
+  left: 393px;
 }
 @media (max-width: 1080px) {
   .main-wrapper .main-wrapper_container .health_card .health_card_wrapper #healthCardResults #ajna2 {
@@ -1067,7 +1077,7 @@ body {
 }
 .main-wrapper .main-wrapper_container .health_card .health_card_wrapper #healthCardResults #ajna3 {
   top: 124px;
-  left: 515px;
+  left: 509px;
 }
 @media (max-width: 1080px) {
   .main-wrapper .main-wrapper_container .health_card .health_card_wrapper #healthCardResults #ajna3 {
@@ -1080,7 +1090,7 @@ body {
 }
 .main-wrapper .main-wrapper_container .health_card .health_card_wrapper #healthCardResults #vishuddha1 {
   top: 182px;
-  left: 285px;
+  left: 279px;
 }
 @media (max-width: 1080px) {
   .main-wrapper .main-wrapper_container .health_card .health_card_wrapper #healthCardResults #vishuddha1 {
@@ -1090,7 +1100,7 @@ body {
 }
 .main-wrapper .main-wrapper_container .health_card .health_card_wrapper #healthCardResults #vishuddha2 {
   top: 182px;
-  left: 400px;
+  left: 393px;
 }
 @media (max-width: 1080px) {
   .main-wrapper .main-wrapper_container .health_card .health_card_wrapper #healthCardResults #vishuddha2 {
@@ -1100,7 +1110,7 @@ body {
 }
 .main-wrapper .main-wrapper_container .health_card .health_card_wrapper #healthCardResults #vishuddha3 {
   top: 182px;
-  left: 515px;
+  left: 509px;
 }
 @media (max-width: 1080px) {
   .main-wrapper .main-wrapper_container .health_card .health_card_wrapper #healthCardResults #vishuddha3 {
@@ -1113,7 +1123,7 @@ body {
 }
 .main-wrapper .main-wrapper_container .health_card .health_card_wrapper #healthCardResults #anahata1 {
   top: 240px;
-  left: 285px;
+  left: 279px;
 }
 @media (max-width: 1080px) {
   .main-wrapper .main-wrapper_container .health_card .health_card_wrapper #healthCardResults #anahata1 {
@@ -1123,7 +1133,7 @@ body {
 }
 .main-wrapper .main-wrapper_container .health_card .health_card_wrapper #healthCardResults #anahata2 {
   top: 240px;
-  left: 400px;
+  left: 393px;
 }
 @media (max-width: 1080px) {
   .main-wrapper .main-wrapper_container .health_card .health_card_wrapper #healthCardResults #anahata2 {
@@ -1133,7 +1143,7 @@ body {
 }
 .main-wrapper .main-wrapper_container .health_card .health_card_wrapper #healthCardResults #anahata3 {
   top: 240px;
-  left: 515px;
+  left: 509px;
 }
 @media (max-width: 1080px) {
   .main-wrapper .main-wrapper_container .health_card .health_card_wrapper #healthCardResults #anahata3 {
@@ -1146,7 +1156,7 @@ body {
 }
 .main-wrapper .main-wrapper_container .health_card .health_card_wrapper #healthCardResults #manipur1 {
   top: 297px;
-  left: 285px;
+  left: 279px;
 }
 @media (max-width: 1080px) {
   .main-wrapper .main-wrapper_container .health_card .health_card_wrapper #healthCardResults #manipur1 {
@@ -1156,7 +1166,7 @@ body {
 }
 .main-wrapper .main-wrapper_container .health_card .health_card_wrapper #healthCardResults #manipur2 {
   top: 297px;
-  left: 400px;
+  left: 393px;
 }
 @media (max-width: 1080px) {
   .main-wrapper .main-wrapper_container .health_card .health_card_wrapper #healthCardResults #manipur2 {
@@ -1166,7 +1176,7 @@ body {
 }
 .main-wrapper .main-wrapper_container .health_card .health_card_wrapper #healthCardResults #manipur3 {
   top: 297px;
-  left: 515px;
+  left: 509px;
 }
 @media (max-width: 1080px) {
   .main-wrapper .main-wrapper_container .health_card .health_card_wrapper #healthCardResults #manipur3 {
@@ -1179,7 +1189,7 @@ body {
 }
 .main-wrapper .main-wrapper_container .health_card .health_card_wrapper #healthCardResults #svadhisthana1 {
   top: 355px;
-  left: 285px;
+  left: 279px;
 }
 @media (max-width: 1080px) {
   .main-wrapper .main-wrapper_container .health_card .health_card_wrapper #healthCardResults #svadhisthana1 {
@@ -1189,7 +1199,7 @@ body {
 }
 .main-wrapper .main-wrapper_container .health_card .health_card_wrapper #healthCardResults #svadhisthana2 {
   top: 355px;
-  left: 400px;
+  left: 393px;
 }
 @media (max-width: 1080px) {
   .main-wrapper .main-wrapper_container .health_card .health_card_wrapper #healthCardResults #svadhisthana2 {
@@ -1199,7 +1209,7 @@ body {
 }
 .main-wrapper .main-wrapper_container .health_card .health_card_wrapper #healthCardResults #svadhisthana3 {
   top: 355px;
-  left: 515px;
+  left: 509px;
 }
 @media (max-width: 1080px) {
   .main-wrapper .main-wrapper_container .health_card .health_card_wrapper #healthCardResults #svadhisthana3 {
@@ -1212,7 +1222,7 @@ body {
 }
 .main-wrapper .main-wrapper_container .health_card .health_card_wrapper #healthCardResults #muladhara1 {
   top: 412px;
-  left: 285px;
+  left: 279px;
 }
 @media (max-width: 1080px) {
   .main-wrapper .main-wrapper_container .health_card .health_card_wrapper #healthCardResults #muladhara1 {
@@ -1222,7 +1232,7 @@ body {
 }
 .main-wrapper .main-wrapper_container .health_card .health_card_wrapper #healthCardResults #muladhara2 {
   top: 412px;
-  left: 400px;
+  left: 393px;
 }
 @media (max-width: 1080px) {
   .main-wrapper .main-wrapper_container .health_card .health_card_wrapper #healthCardResults #muladhara2 {
@@ -1232,7 +1242,7 @@ body {
 }
 .main-wrapper .main-wrapper_container .health_card .health_card_wrapper #healthCardResults #muladhara3 {
   top: 412px;
-  left: 515px;
+  left: 509px;
 }
 @media (max-width: 1080px) {
   .main-wrapper .main-wrapper_container .health_card .health_card_wrapper #healthCardResults #muladhara3 {
@@ -1245,7 +1255,7 @@ body {
 }
 .main-wrapper .main-wrapper_container .health_card .health_card_wrapper #healthCardResults #sum1 {
   top: 469px;
-  left: 285px;
+  left: 279px;
 }
 @media (max-width: 1080px) {
   .main-wrapper .main-wrapper_container .health_card .health_card_wrapper #healthCardResults #sum1 {
@@ -1255,7 +1265,7 @@ body {
 }
 .main-wrapper .main-wrapper_container .health_card .health_card_wrapper #healthCardResults #sum2 {
   top: 469px;
-  left: 400px;
+  left: 393px;
 }
 @media (max-width: 1080px) {
   .main-wrapper .main-wrapper_container .health_card .health_card_wrapper #healthCardResults #sum2 {
@@ -1265,7 +1275,7 @@ body {
 }
 .main-wrapper .main-wrapper_container .health_card .health_card_wrapper #healthCardResults #sum3 {
   top: 469px;
-  left: 515px;
+  left: 509px;
 }
 @media (max-width: 1080px) {
   .main-wrapper .main-wrapper_container .health_card .health_card_wrapper #healthCardResults #sum3 {
@@ -1300,7 +1310,7 @@ body {
   text-align: left;
   font-weight: 700;
   font-size: 32px;
-  margin-bottom: 20px;
+  margin-bottom: 35px;
   font-family: "Cormorant SC", serif;
   color: #2E2B75;
 }
@@ -1425,9 +1435,9 @@ body {
   border-radius: 50%;
   width: 30px;
   height: 30px;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 700;
-  font-family: "Cormorant SC", serif;
+  font-family: "Noto Serif Display", serif;
   margin-right: 10px;
   -ms-flex-negative: 0;
       flex-shrink: 0;
@@ -1489,14 +1499,15 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 21px;
+  font-size: 17px;
+  font-family: "Noto Serif Display", serif;
 }
 .life-map__diamond .life-map__diamond_col2 h3 {
   font-size: 22px;
   font-weight: 700;
   font-family: "Cormorant SC", serif;
   color: #2E2B75;
-  margin-bottom: 5px;
+  margin-bottom: 25px;
 }
 .life-map__diamond .life-map__diamond_col2 span {
   font-size: 18px;
@@ -1663,7 +1674,7 @@ body {
   display: block;
 }
 #consultation-section .consultation-2 .consultation-2_content-and-photo .consultation_content {
-  padding-left: 25px;
+  padding-left: 70px;
 }
 @media (max-width: 1080px) {
   #consultation-section .consultation-2 .consultation-2_content-and-photo .consultation_content {

@@ -10,6 +10,7 @@ body {
   font-family: "Nunito sans", sans-serif;
   color: #222;
   background: #FDFDFF;
+  overflow-x: hidden;
 }
 @media (max-width: 1080px) {
   body {
@@ -442,6 +443,7 @@ body {
   .main-wrapper .main-wrapper_container .results {
     margin-top: 0px;
     padding: 10px 10px;
+    margin: 0 auto;
   }
 }
 .main-wrapper .main-wrapper_container .results .results_content {
@@ -460,9 +462,19 @@ body {
           align-items: center;
   width: 663px;
 }
+@media (max-width: 1080px) {
+  .main-wrapper .main-wrapper_container .results .results_content {
+    width: 368px;
+  }
+}
 .main-wrapper .main-wrapper_container .results .results_content .results_content_matrix_wrapper {
   position: relative;
   max-width: 663px;
+}
+@media (max-width: 1080px) {
+  .main-wrapper .main-wrapper_container .results .results_content .results_content_matrix_wrapper {
+    width: 368px;
+  }
 }
 .main-wrapper .main-wrapper_container .results .results_content .results_content_matrix_wrapper .results_content_matrix {
   max-width: 663px;
@@ -945,6 +957,17 @@ body {
       -ms-flex-align: start;
           align-items: flex-start;
   padding-top: 35px;
+}
+@media (max-width: 470px) {
+  .main-wrapper .main-wrapper_container .health_card {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    margin: 0 auto;
+  }
 }
 .main-wrapper .main-wrapper_container .health_card .health_card_wrapper {
   display: -webkit-box;
@@ -1598,7 +1621,7 @@ body {
 @media (max-width: 1080px) {
   #consultation-section .consultation-1 .consultation-1_h2 {
     font-size: 30px;
-    width: 358px;
+    width: 280px;
     height: 70px;
   }
 }
@@ -1628,7 +1651,7 @@ body {
 @media (max-width: 1080px) {
   #consultation-section .consultation-2 .consultation-title {
     font-size: 26px;
-    width: 75%;
+    width: 350px;
     margin: 0 auto;
     height: 70px;
     text-align: start;

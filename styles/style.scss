@@ -1279,10 +1279,11 @@ body {
     }
 
     &__header {
+        // border: 1px solid red;
         display: flex;
         align-items: center;
         font-weight: bold;
-        margin-bottom: 20px;
+        margin-bottom: 5px;
         font-family: "Cormorant SC", serif;
         color: $primary-color;
 
@@ -1290,25 +1291,35 @@ body {
             font-size: 16px;
         }
 
-        span:last-child {
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            // margin-left: 10px;
-            font-size: 17px;
-            height: 40px;
-            width: 100%;
-            border: 1px solid $primary-color;
-            border-radius: 35px;
-            padding-left: 20px;
-
-            @media (max-width: 1080px) {
-                // font-size: 14px;
-                font-size: 16px;
-                padding-left: 20px;
+        p {
+            font-size: 20px;
+            margin-bottom: 0px;
+            span {
+                display: block;
+                font-size: 17px;
+                margin-top: -5px;
             }
-
         }
+
+        // span:last-child {
+        //     display: flex;
+        //     justify-content: flex-start;
+        //     align-items: center;
+        //     // margin-left: 10px;
+        //     font-size: 17px;
+        //     height: 40px;
+        //     width: 100%;
+        //     border: 1px solid $primary-color;
+        //     border-radius: 35px;
+        //     padding-left: 20px;
+
+        //     @media (max-width: 1080px) {
+        //         // font-size: 14px;
+        //         font-size: 16px;
+        //         padding-left: 20px;
+        //     }
+
+        // }
     }
 
     &__list {
@@ -1324,6 +1335,8 @@ body {
             align-items: center;
             margin-bottom: 6px;
             font-size: 16px;
+            font-family: "Cormorant SC", serif;
+            font-weight: bold;
         }
     }
 
@@ -1343,8 +1356,8 @@ body {
         border: 2px solid #800060; // бордовий як на макеті
         color: #2D2B75;
         border-radius: 50%;
-        width: 30px;
-        height: 30px;
+        width: 40px;
+        height: 40px;
         font-size: 17px;
         font-weight: 700;
         font-family: "Noto Serif Display", serif;
@@ -1445,6 +1458,61 @@ body {
         justify-content: center;
         align-items: center;
         max-width: 700px;
+
+        p {
+            margin: 0 auto;
+            text-align: center;
+            border-left: 4px solid #8E3B67;
+            padding-left: 18px;
+        }
+
+        a {
+            position: relative;
+            z-index: 1;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding: 14px 34px;
+            background: linear-gradient(45deg, #9F316B, #770f6e);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 0px;
+            width: 264px;
+            height: 48px;
+            font-size: 16px;
+            font-weight: 700;
+            font-family: "Cormorant SC", serif;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: $btn-hover-gradient2;
+                opacity: 0;
+                z-index: -1;
+                transition: opacity 0.3s ease;
+            }
+
+
+
+            &:hover {
+                color: #fff;
+
+                &::before {
+                    opacity: 1;
+                }
+            }
+
+            @media (max-width: 1080px) {
+                margin-top: 15px;
+            }
+        }
 
         .consultation-1_h2 {
             display: flex;
@@ -1832,7 +1900,8 @@ body {
 .footer {
     position: relative;
     color: #000;
-    height: 454px;
+    // height: 454px;
+    height: 320px;
 
     &__bg {
         background: url("../assets/img/footer-bg.png") no-repeat center/cover;
@@ -1904,6 +1973,7 @@ body {
     }
 
     &__form {
+        opacity: 0;
         text-align: center;
         margin-bottom: 40px;
 

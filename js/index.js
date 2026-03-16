@@ -31,18 +31,38 @@ const diamondSoul = document.getElementById("diamondSoul");
 
 let results;
 
+// function validateName() {
+//   const value = nameInput.value.trim();
+//   const regex = /^[A-Za-zА-Яа-яІіЇїЄєҐґ]+(?:\s+[A-Za-zА-Яа-яІіЇїЄєҐґ]+)*$/u;
+
+//   if (!value) {
+//     nameError.textContent = "Поле обов’язкове";
+//     return false;
+//   }
+//   if (!regex.test(value)) {
+//     nameError.textContent = "Мін. 2 символи, тільки літери";
+//     return false;
+//   }
+//   nameError.textContent = "";
+//   return true;
+// }
+
 function validateName() {
   const value = nameInput.value.trim();
   const regex = /^[A-Za-zА-Яа-яІіЇїЄєҐґ]+(?:\s+[A-Za-zА-Яа-яІіЇїЄєҐґ]+)*$/u;
 
+  // Якщо поле порожнє — це тепер нормально, повертаємо true
   if (!value) {
-    nameError.textContent = "Поле обов’язкове";
-    return false;
+    nameError.textContent = "";
+    return true; 
   }
+
+  // Якщо ж щось введено, перевіряємо на відповідність буквам
   if (!regex.test(value)) {
     nameError.textContent = "Мін. 2 символи, тільки літери";
     return false;
   }
+
   nameError.textContent = "";
   return true;
 }

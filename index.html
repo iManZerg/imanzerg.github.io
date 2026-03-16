@@ -72,17 +72,22 @@
             <img src="./assets/img/logo3.png" alt="IMARIA logo" class="hero__logo" />
 
             <h2 class="hero__subtitle">Онлайн-розрахунок</h2>
-            <h1 class="hero__title">АНАЛІТИЧНО–НУМЕРОЛОГІЧНА<br>СИСТЕМА «ПУТЬ ДУШІ»</h1>
+            <!-- <h1 class="hero__title">АНАЛІТИЧНО–НУМЕРОЛОГІЧНА<br>СИСТЕМА «ПУТЬ ДУШІ»</h1> -->
+            <h1 class="hero__title">Аналітично-нумерологічна система <br> енерго-інформаційної (вібраційної) діагностики
+                долі
+                "Путь Душі" (Way of the Soul) в традиції IMARIA</h1>
 
-            <p class="hero__text">
+            <!-- <p class="hero__text">
                 Досліджуйте енергетичну структуру та налаштовуйтесь на глибинні рівні сприйняття реальності.<br>
                 Введіть дані та отримаєте доступ до унікальної системи аналізу!
-            </p>
+            </p> -->
 
             <form id="calcForm" class="form">
                 <div class="form__group">
-                    <label for="name">Ім’я *</label>
-                    <input type="text" id="name" name="name" placeholder="Введіть ім’я" required />
+                    <!-- <input type="text" id="name" name="name" placeholder="Введіть ім’я" required /> -->
+                    <!-- <label for="name">Ім’я *</label> -->
+                    <label for="name">Ім’я</label>
+                    <input type="text" id="name" name="name" placeholder="Введіть ім’я" />
                     <small class="error" id="nameError"></small>
                 </div>
 
@@ -175,33 +180,15 @@
                 <!-- Блок 1 -->
                 <div class="life-map__block">
                     <div class="life-map__header">
-                        <span>1. Пошук Себе. Діалог внутрішньої дитини</span>
+                        <span class="life-map__circle" id="circle3"></span>
+                        <p>1. Пошук Себе. Діалог внутрішньої дитини </br>
+                            <span>Небесне призначення + Земне призначення</span>
+                        </p>
                     </div>
                     <div class="block-list">
                         <ul class="life-map__list">
                             <li><span class="life-map__circle" id="circle1"></span> Небесне призначення</li>
                             <li><span class="life-map__circle" id="circle2"></span> Земне призначення</li>
-                        </ul>
-                        <ul class="life-map__list life-map__list2">
-                            <li><span class="life-map__circle" id="circle3"></span> Перше призначення</li>
-                        </ul>
-
-                    </div>
-
-                </div>
-
-                <!-- Блок 2 -->
-                <div class="life-map__block">
-                    <div class="life-map__header">
-                        <span>2. Соціалізація. Діалог між мужністю і жіночістю</span>
-                    </div>
-                    <div class="block-list">
-                        <ul class="life-map__list">
-                            <li><span class="life-map__circle" id="circle4"></span> Призначення мужності</li>
-                            <li><span class="life-map__circle" id="circle5"></span> Призначення жіночності</li>
-                        </ul>
-                        <ul class="life-map__list life-map__list2">
-                            <li><span class="life-map__circle" id="circle6"></span> Друге призначення</li>
                         </ul>
                     </div>
 
@@ -210,41 +197,55 @@
                 <!-- Блок 3 -->
                 <div class="life-map__block">
                     <div class="life-map__header">
-                        <!-- <span class="life-map__circle" id="circle9"></span> -->
-                        <span>3. Духовна грамотність</span>
+                        <span class="life-map__circle" id="circle9"></span>
+                        <p>3. Духовна грамотність </br>
+                            <span>1. Пошук себе + 2. Соціалізація</span>
+                        </p>
                     </div>
 
                     <div class="block-list">
                         <ul class="life-map__list">
                             <ul class="life-map__list">
-                                <li><span class="life-map__circle" id="circle7"></span> Особисте призначення</li>
-                                <li><span class="life-map__circle" id="circle8"></span> Соціальне призначення</li>
+                                <li><span class="life-map__circle" id="circle7"></span> Особисте призначення &nbsp;&nbsp;1. Пошук себе</li>
+                                <li><span class="life-map__circle" id="circle8"></span> Соціальне призначення &nbsp;&nbsp;2. Соціалізація</li>
                             </ul>
                         </ul>
-                        <ul class="life-map__list life-map__list2">
-                            <li><span class="life-map__circle" id="circle9"></span> Третє призначення</li>
+                    </div>
+                </div>
+
+                <!-- Блок 2 -->
+                <div class="life-map__block">
+                    <div class="life-map__header">
+                        <span class="life-map__circle" id="circle6"></span>
+                        <p>2. Соціалізація. </br> Діалог між мужністю і жіночістю </br>
+                            <span>Призначення мужності + Призначення жіночності</span>
+                        </p>
+                    </div>
+                    <div class="block-list">
+                        <ul class="life-map__list">
+                            <li><span class="life-map__circle" id="circle4"></span> Призначення мужності</li>
+                            <li><span class="life-map__circle" id="circle5"></span> Призначення жіночності</li>
                         </ul>
                     </div>
 
-
                 </div>
+
 
                 <!-- Блок 4 -->
                 <div class="life-map__block">
                     <div class="life-map__header">
-                        <!-- <span class="life-map__circle" id="circle12"></span> -->
-                        <span>4. Діалог галактичної душі</span>
+                        <span class="life-map__circle" id="circle12"></span>
+                        <p>4. Діалог галактичної душі </br>
+                            <span>2. Соціалізація + 3. Духовна грамотність</span>
+                        </p>
                     </div>
 
                     <div class="block-list">
                         <ul class="life-map__list">
                             <ul class="life-map__list">
-                                <li><span class="life-map__circle" id="circle10"></span> Соціальне призначення</li>
-                                <li><span class="life-map__circle" id="circle11"></span> Духовне призначення</li>
+                                <li><span class="life-map__circle" id="circle10"></span> Соціальне призначення &nbsp;&nbsp;1. Соціалізація</li>
+                                <li><span class="life-map__circle" id="circle11"></span> Духовне призначення &nbsp;&nbsp;3. Духовна грамотність</li>
                             </ul>
-                        </ul>
-                        <ul class="life-map__list life-map__list2">
-                            <li><span class="life-map__circle" id="circle12"></span> Четверте призначення</li>
                         </ul>
                     </div>
 
@@ -277,7 +278,7 @@
 
     <section id="consultation-section">
 
-        <div class="consultation-1 container">
+        <!-- <div class="consultation-1 container">
             <h2 class="consultation-1_h2">Консультація від IMARIA MASTER</h2>
             <div class="consultation-1_p">
                 <p>За аналітично-нумерологічною системою «ПУТЬ ДУШІ» ви дізнаєтесь свій код особистого
@@ -295,7 +296,15 @@
                 </p>
 
             </div>
+        </div> -->
+
+        <div class="consultation-1 container">
+            <p>Залишились питання або помітили помилку? </br>
+                Напишіть, будь ласка, до команди турботи.
+            </p>
+            <a target="_blank" href="https://t.me/pipl_platform_bot?start=support">Команда турботи</a>
         </div>
+
 
         <div class="consultation-2">
             <h2 class="consultation-title">Консультація від IMARIA MASTER – Ірини Заверухи</h2>
@@ -378,7 +387,8 @@
                 </div>
 
                 <div class="footer__form">
-                    <br class="footer__form-title">Залишились питання або помітили помилку? </br> Напишіть, будь ласка, до команди турботи.</p>
+                    <br class="footer__form-title">Залишились питання або помітили помилку? </br> Напишіть, будь ласка,
+                    до команди турботи.</p>
                     <a target="_blank" href="https://t.me/pipl_platform_bot?start=support">Команда турботи</a>
                 </div>
 

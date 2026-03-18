@@ -1914,11 +1914,12 @@ body {
 .footer {
     position: relative;
     color: #000;
-    height: 400px;
+    height: 480px;
     background-color: #E8E9F8;
+    padding-top: 55px;
 
     @media (max-width: 1080px) {
-        height: 650px;
+        height: 720px;
     }
 
 
@@ -2034,7 +2035,7 @@ body {
 
     &__logo img {
         max-width: 226px;
-        margin-left: -30px;
+        margin-left: -18px;
 
         @media (max-width: 1080px) {
             width: 170px;
@@ -2074,6 +2075,55 @@ body {
             @media (max-width: 1080px) {
                 font-size: 15px;
                 max-width: 350px;
+            }
+        }
+
+        .footer__right_btn {
+            position: relative;
+            z-index: 1;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding: 14px 34px;
+            background: $btn-gradient;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 0px;
+            width: 264px;
+            height: 48px;
+            font-size: 20px;
+            font-weight: normal;
+            font-family: "Cormorant SC", serif;
+            margin-top: 25px;
+            transition: all 0.3s ease;
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: $btn-hover-gradient1;
+                opacity: 0;
+                z-index: -1;
+                transition: opacity 0.3s ease;
+            }
+
+
+
+            &:hover {
+                color: #fff;
+
+                &::before {
+                    opacity: 1;
+                }
+            }
+
+            @media (max-width: 1080px) {
+                margin-top: 30px;
+                margin-left: 12.5%;
             }
         }
 

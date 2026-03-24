@@ -24,6 +24,8 @@ const circle10 = document.getElementById("circle10");
 const circle11 = document.getElementById("circle11");
 const circle12 = document.getElementById("circle12");
 const diamondSoul = document.getElementById("diamondSoul");
+const brandCodeCircle = document.getElementById("brandCodeCircle");
+
 
 
 
@@ -305,6 +307,7 @@ form.addEventListener("submit", function (e) {
   circle11.innerHTML = `${reduceTo22(reduceTo22(reduceTo22(results.B + results.D) + reduceTo22(results.A + results.C)) + reduceTo22(reduceTo22(results.E + results.G) + reduceTo22(results.F + results.H)))}`;
 
   diamondSoul.innerHTML = `<span class="life-map__circle">${results.healthCardSum2}</span> <span class="life-map__circle">${results.healthCardSum2}</span> <span class="life-map__circle">${reduceTo22(results.healthCardSum2 + results.healthCardSum2)}</span>`
+  brandCodeCircle.innerHTML = `${results.T4}`;
 
 
 

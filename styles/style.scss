@@ -228,12 +228,24 @@ body {
             }
         }
 
+        .hero__subtitle2 {
+            font-family: "Nunito sans", sans-serif;
+            font-size: 20px;
+            font-weight: normal;
+            margin-bottom: 35px;
+            color: $primary-color;
+
+            @media (max-width: 1080px) {
+                font-size: 20px;
+            }
+        }
+
         .hero__title {
             font-family: "Cormorant SC", serif;
             font-weight: 700;
             font-style: bold;
             font-size: 32px;
-            margin-bottom: 50px;
+            margin-bottom: 30px;
             color: $primary-color;
 
             @media (max-width: 1080px) {
@@ -1259,14 +1271,20 @@ body {
     }
 
     &__grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+        // display: grid;
+        // grid-template-columns: 1fr 1fr;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
         gap: 40px 60px;
         margin-bottom: 40px;
+        height: 400px;
 
         @media (max-width: 1080px) {
-            grid-template-columns: 1fr;
+            // grid-template-columns: 1fr;\
+            flex-wrap: nowrap;
             gap: 25px;
+            height: 820px;
         }
     }
 
@@ -1418,23 +1436,84 @@ body {
             span {
                 font-size: 18px;
                 font-weight: bold;
+
             }
         }
 
+
+
+
     }
+
+    .brand-code {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+
+        h3 {
+            font-size: 22px;
+            font-weight: 700;
+            font-family: "Cormorant SC", serif;
+            color: $primary-color;
+            margin: 25px 0;
+        }
+
+        .circle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #800060;
+            color: #2D2B75;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 17px;
+            font-weight: 700;
+            font-family: "Noto Serif Display", serif;
+            margin-right: 10px;
+            flex-shrink: 0;
+        }
+    }
+
+
 
     &__description {
         font-size: 20px;
         font-weight: 400;
         line-height: 1.5;
         text-align: center;
-        max-width: 1014px;
-        margin: 0 auto 70px;
+        max-width: 950px;
+        margin: 30px auto 30px;
         padding: 0px;
+
 
         @media (max-width: 1080px) {
             font-size: 16px;
             text-align: start;
+        }
+
+    }
+
+    &__description_ul {
+        // border: 1px solid red;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 auto;
+        padding: 0;
+        font-size: 18px;
+
+        li {
+            width: 500px;
+
+            // border: 1px solid red;
+            @media (max-width: 1080px) {
+                width: 360px;
+                font-size: 16px;
+                padding-left: 15px;
+                list-style-position: inside;
+            }
         }
     }
 }
@@ -1756,7 +1835,7 @@ body {
         justify-content: space-between;
         align-items: center;
         gap: 40px;
-        max-width: 1200px;
+        max-width: 1000px;
         margin: 0 auto;
 
         @media (max-width: 1080px) {
@@ -1845,12 +1924,12 @@ body {
             color: #fff;
             text-decoration: none;
             border-radius: 0px;
-            max-width: 521px;
+            width: 375px;
             height: 55px;
             font-size: 20px;
-            font-weight: 700;
+            // font-weight: 700;
             font-family: "Cormorant SC", serif;
-            margin-top: 30px;
+            margin-top: 14px;
             transition: all 0.3s ease;
 
             &::before {
@@ -1875,9 +1954,11 @@ body {
             }
 
             @media (max-width: 1080px) {
-                width: 358px;
                 font-size: 16px;
+                width: 358px;
+                height: 49px;
             }
+
         }
     }
 
@@ -1892,7 +1973,7 @@ body {
         }
 
         .mentors__photo {
-            max-width: 496px;
+            max-width: 406px;
             height: auto;
 
             @media (max-width: 1080px) {

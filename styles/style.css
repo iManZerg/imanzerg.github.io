@@ -279,6 +279,14 @@ body {
     font-size: 26px;
   }
 }
+.hero .hero__inner .hero__title span {
+  font-size: 21px;
+}
+@media (max-width: 1080px) {
+  .hero .hero__inner .hero__title span {
+    font-size: 17px;
+  }
+}
 .hero .hero__inner .hero__text {
   margin-bottom: 30px;
   line-height: 1.5;
@@ -1583,6 +1591,77 @@ body {
   margin-right: 10px;
   -ms-flex-negative: 0;
       flex-shrink: 0;
+}
+.life-map .description-result {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 500px;
+  margin: 35px auto 60px;
+}
+.life-map .description-result p {
+  text-align: center;
+  font-size: 19px;
+}
+.life-map .description-result a {
+  position: relative;
+  z-index: 1;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow: hidden;
+  padding: 14px 34px;
+  background: linear-gradient(45deg, #9F316B, #770f6e);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 0px;
+  width: 277px;
+  height: 48px;
+  font-size: 17px;
+  font-family: "Cormorant SC", serif;
+  margin-top: 30px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.life-map .description-result a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, #9F316B, #761E4C, #BB2172);
+  opacity: 0;
+  z-index: -1;
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+.life-map .description-result a:hover {
+  color: #fff;
+}
+.life-map .description-result a:hover::before {
+  opacity: 1;
+}
+@media (max-width: 1080px) {
+  .life-map .description-result a {
+    margin-top: 15px;
+  }
 }
 .life-map__description {
   font-size: 20px;

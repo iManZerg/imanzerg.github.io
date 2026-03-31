@@ -1,0 +1,346 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.hero-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(90deg, #2f1734 0%, #a24d39 80%, #86403b 100%);
+    overflow: hidden;
+}
+
+
+/* .container {
+    position: relative;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+} */
+
+.card-container::before {
+    content: "";
+    position: absolute;
+    z-index: 999;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    border-radius: 30px;
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    border: 2px solid #dbb3a1;
+    box-shadow:
+        /* М'яке зовнішнє сяйво (трохи тепліше) */
+        0 0 15px 2px rgba(255, 180, 100, 0.212),
+        /* Інтенсивніше внутрішнє сяйво */
+        inset 0 0 10px 1px rgba(255, 230, 170, 0.4);
+    /* 3. Опціонально: додає м'якості самій лінії */
+    /* filter: blur(0.5px); */
+}
+
+.hero_img {
+    position: absolute;
+    width: 900px;
+    bottom: 0px;
+    left: 970px;
+    filter: drop-shadow(0px 7px 50px rgba(255, 230, 170, 0.4));
+}
+
+.info {
+    /* border: 1px solid white; */
+    display: flex;
+    flex-direction: column;
+    margin-left: 120px;
+    width: 45%;
+    color: #fef6f7;
+}
+
+
+h1 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 55px;
+    font-weight: normal;
+    margin-bottom: 35px;
+    color: #dbb3a1;
+
+    /* background: linear-gradient(to right,
+            #fef6f7 0%,
+            #dbb3a1 50%,
+            #fef6f7 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: colorFlow 4s linear infinite; */
+}
+
+
+/* @keyframes colorFlow {
+    0% {
+        background-position: 0% center;
+    }
+
+    100% {
+        background-position: 200% center;
+    }
+} */
+
+h2 {
+    text-transform: uppercase;
+    font-size: 50px;
+    margin-bottom: 25px;
+}
+
+.span_h2 {
+    font-size: 35px;
+}
+
+p {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 25px;
+    margin-bottom: 75px;
+}
+
+
+.pay-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: 420px;
+    height: 70px;
+    background: linear-gradient(0deg, #0b6e88 0%, #093e52 100%);
+    border-radius: 45px;
+    border: 2px solid #dbb3a1;
+    box-shadow:
+        /* М'яке зовнішнє сяйво (трохи тепліше) */
+        0 0 15px 2px rgba(255, 180, 100, 0.212);
+    /* Інтенсивніше внутрішнє сяйво */
+    /* inset 0 0 10px 1px rgba(255, 230, 170, 0.4); */
+    /* 3. Опціонально: додає м'якості самій лінії */
+    /* filter: blur(0.5px); */
+    color: #dbb3a1;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-family: "Montserrat", serif;
+    transition-duration: 0.4s;
+    z-index: 999;
+}
+
+.pay-button:hover {
+    cursor: pointer;
+    box-shadow:
+        0px 0px 20px 1px rgba(255, 180, 100, 0.438),
+        inset 0 0 10px 1px rgba(255, 230, 170, 0.199);
+
+}
+
+.pay-button_span1 {
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+.pay-button_span2 {
+    font-size: 25px;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+.pay-button_img {
+    width: 40px;
+}
+
+#icon01 {
+    position: absolute;
+    width: 120px;
+    top: 17%;
+    left: 35%;
+    transform: rotate(10deg);
+}
+
+#icon02 {
+    position: absolute;
+    width: 850px;
+    top: 38%;
+    left: 10%;
+    transform: rotate(45deg);
+    z-index: 1;
+    opacity: 0.8;
+}
+
+
+
+@media (max-width: 1650px) {
+    .hero_img {
+        width: 750px;
+        left: 52%;
+    }
+
+    h1 {
+        font-size: 45px;
+    }
+
+    h2 {
+        font-size: 38px;
+    }
+
+    .span_h2 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 22px;
+    }
+
+    #icon01 {
+        width: 115px;
+        top: 17%;
+        left: 40%;
+    }
+
+    #icon02 {
+        width: 750px;
+        top: 40%;
+    }
+}
+
+@media (max-width: 1200px) {
+
+    #icon01 {
+        width: 115px;
+        top: 17%;
+        left: 45%;
+    }
+
+    #icon02 {
+        width: 650px;
+        top: 51%;
+    }
+}
+
+@media (max-width: 769px) {
+
+    body {
+        overflow-y: auto;
+    }
+
+
+    .hero-section {
+        flex-direction: column;
+        /* align-items: center; */
+        padding: 20px;
+        background: linear-gradient(90deg, #2f1734 0%, #a24d39 80%, #86403b 100%);
+        /* overflow: hidden; */
+        height: 800px;
+    }
+
+    .card-container::before {
+        top: 10px;
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+        border: 2px solid #dbb3a1;
+    }
+
+
+
+    .hero_img {
+        width: 350px;
+        /* top: 15%; */
+        top: 115px;
+        left: 0%;
+        left: calc((100% - 380px)/2);
+    }
+
+    h1 {
+        font-size: 35px;
+        position: absolute;
+        top: 8%;
+    }
+
+    h2 {
+        font-size: 19px;
+        position: absolute;
+        /* top: 65%; */
+        top: 530px;
+        margin-bottom: 0px;
+        width: 330px;
+        text-align: center;
+    }
+
+    .span_h2 {
+        font-size: 13px;
+    }
+
+    p {
+        font-size: 18.5px;
+        position: absolute;
+        /* top: 75%; */
+        top: 620px;
+
+        width: 330px;
+        text-align: center;
+    }
+
+    .info {
+        justify-content: center;
+        align-items: center;
+        margin-left: 0px;
+        width: 100%;
+    }
+
+    .pay-button {
+        position: absolute;
+        /* top: 53.5%; */
+        top: 435px;
+        width: 320px;
+        gap: 10px;
+        height: 70px;
+        font-size: 14px;
+    }
+
+    .pay-button_span1 {
+        font-size: 10px;
+    }
+
+    .pay-button_span2 {
+        font-size: 18px;
+    }
+
+    .pay-button_img {
+        width: 35px;
+    }
+
+    #icon01 {
+        width: 90px;
+        top: 11%;
+        left: 5%;
+    }
+
+    #icon02 {
+        width: 400px;
+        top: 71%;
+    }
+}

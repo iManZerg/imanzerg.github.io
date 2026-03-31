@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Статус оплати | Матриця Долі</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            overflow: hidden;
+            background: #2f1734; /* Фолбек */
+        }
+
+        .hero-section {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: linear-gradient(90deg, #2f1734 0%, #a24d39 80%, #86403b 100%);
+            overflow: hidden;
+        }
+
+        /* Золотиста рамка як на головній */
+        .hero-section::before {
+            content: "";
+            position: absolute;
+            z-index: 10;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+            border-radius: 30px;
+            pointer-events: none;
+            border: 2px solid #dbb3a1;
+            box-shadow:
+                0 0 15px 2px rgba(255, 180, 100, 0.212),
+                inset 0 0 10px 1px rgba(255, 230, 170, 0.4);
+        }
+
+        .info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            max-width: 800px;
+            width: 90%;
+            color: #fef6f7;
+            z-index: 20;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        .status-icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+            filter: drop-shadow(0px 0px 20px rgba(255, 230, 170, 0.4));
+        }
+
+        h1 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(35px, 5vw, 55px);
+            font-weight: normal;
+            margin-bottom: 25px;
+            color: #dbb3a1;
+            line-height: 1.1;
+        }
+
+        .status-text {
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(20px, 3vw, 28px);
+            margin-bottom: 50px;
+            color: #fef6f7;
+            line-height: 1.4;
+        }
+
+        /* Стиль кнопки як на головній */
+        .btn-telegram {
+            display: none; /* З'явиться через JS */
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            width: 100%;
+            max-width: 420px;
+            height: 75px;
+            background: linear-gradient(0deg, #0b6e88 0%, #093e52 100%);
+            border-radius: 45px;
+            border: 2px solid #dbb3a1;
+            box-shadow: 0 0 15px 2px rgba(255, 180, 100, 0.212);
+            color: #dbb3a1;
+            font-size: 18px;
+            text-transform: uppercase;
+            font-weight: 600;
+            font-family: "Montserrat", serif;
+            text-decoration: none;
+            transition: 0.4s;
+            cursor: pointer;
+        }
+
+        .btn-telegram:hover {
+            box-shadow:
+                0px 0px 25px 1px rgba(255, 180, 100, 0.5),
+                inset 0 0 10px 1px rgba(255, 230, 170, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Декоративні іконки з головної */
+        #icon01 {
+            position: absolute;
+            width: 120px;
+            top: 15%;
+            left: 10%;
+            transform: rotate(-15deg);
+            opacity: 0.6;
+        }
+
+        #icon02 {
+            position: absolute;
+            width: 600px;
+            bottom: -10%;
+            right: -10%;
+            transform: rotate(15deg);
+            z-index: 1;
+            opacity: 0.3;
+        }
+
+        /* Анімація точок завантаження */
+        .loading-dots:after {
+            content: ' .';
+            animation: dots 1.5s steps(5, end) infinite;
+        }
+
+        @keyframes dots {
+            0%, 20% { color: rgba(0,0,0,0); text-shadow: .25em 0 0 rgba(0,0,0,0), .5em 0 0 rgba(0,0,0,0); }
+            40% { color: #fef6f7; text-shadow: .25em 0 0 rgba(0,0,0,0), .5em 0 0 rgba(0,0,0,0); }
+            60% { text-shadow: .25em 0 0 #fef6f7, .5em 0 0 rgba(0,0,0,0); }
+            80%, 100% { text-shadow: .25em 0 0 #fef6f7, .5em 0 0 #fef6f7; }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Мобільна адаптація */
+        @media (max-width: 769px) {
+            body { overflow-y: auto; }
+            .hero-section::before {
+                top: 10px; left: 10px; right: 10px; bottom: 10px;
+            }
+            .btn-telegram {
+                height: 65px;
+                font-size: 14px;
+            }
+            #icon02 { width: 300px; }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero-section">
+        <div id="icon01">✨</div> 
+        <div id="icon02">🔮</div>
+
+        <div class="info">
+            <div class="status-icon" id="icon">⏳</div>
+            <h1 id="headline">Перевірка оплати</h1>
+            <p class="status-text" id="status">
+                Будь ласка, зачекайте 3-5 секунд<span class="loading-dots"></span>
+            </p>
+            
+            <a id="botLink" class="btn-telegram">
+                Відкрити Telegram бот
+            </a>
+        </div>
+    </section>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const order = params.get("order");
+        const botUsername = "PathOfTarot_bot";
+        const API_URL = "https://validatetoken-dwtlhl22ra-uc.a.run.app";
+
+        async function checkPayment() {
+            if (!order) {
+                document.getElementById("status").innerText = "Помилка: замовлення не знайдено";
+                document.getElementById("icon").innerText = "❌";
+                return;
+            }
+
+            try {
+                // Штучна пауза для процесінгу
+                await new Promise((r) => setTimeout(r, 4000));
+
+                const res = await fetch(API_URL, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ orderReference: order }),
+                });
+
+                const data = await res.json();
+
+                if (!data.valid || !data.token) {
+                    document.getElementById("status").innerText = "Платіж ще обробляється. Оновіть сторінку через 10 секунд.";
+                    document.getElementById("icon").innerText = "🔄";
+                    return;
+                }
+
+                // Успіх
+                document.getElementById("icon").innerText = "✅";
+                document.getElementById("headline").innerText = "Оплата успішна!";
+                document.getElementById("status").innerText = "Доступ активовано. Натисніть кнопку нижче, щоб почати шлях.";
+                
+                const botLink = document.getElementById("botLink");
+                botLink.href = `https://t.me/${botUsername}?start=${data.token}`;
+                botLink.style.display = "flex";
+                
+            } catch (e) {
+                document.getElementById("status").innerText = "Помилка з'єднання. Спробуйте оновити сторінку.";
+                document.getElementById("icon").innerText = "⚠️";
+                console.error(e);
+            }
+        }
+
+        checkPayment();
+    </script>
+</body>
+</html>

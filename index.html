@@ -1,495 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords"
-        content="Нумерологія, Матриця душі, Матриця долі, Числа життєвого шляху, Доля за датою народження, Поради нумеролога, Вплив чисел на долю, Аналіз дати народження">
-    <meta name="description"
-        content="Я — Ірина Заверуха (IMARIA MASTER). Засновниця та пульсар проєкту IMARIA® & PIPL™ — простору багатовимірного розвитку та Алхімії Живого Життя" />
-    <link rel="stylesheet" href="./styles/style.css">
-    <link rel="icon" href="favicon.png" type="image/x-icon">
+    <title>Курс «Шлях Таро» | Стань майстром</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;400;500;600;700&family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
-    <title>IMARIA ACADEMIA</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <header class="header">
-        <div class="container header__inner">
-            <div class="header__logos">
-                <!-- Місце під логотипи -->
-                <img src="./assets/img/logo1.png" alt="Лого 1" class="logo logo1" />
-                <a target="_blank" href="https://zaverukha.com"><img src="./assets/img/logo2.png" alt="Лого 2"
-                        class="logo logo2" /></a>
 
-            </div>
-
-            <!-- Бургер -->
-            <div class="burger" id="burger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-
-            <!-- Навігація -->
-            <nav class="nav" id="navMenu">
-                <ul class="nav__list">
-                    <li><a target="_blank" href="https://zaverukha.com">Головна</a></li>
-                    <li><a target="_blank" href="https://zaverukha.com/%D0%BF%D1%80%D0%BE-%D0%BC%D0%B5%D0%BD%D0%B5/">Про
-                            мене</a></li>
-                    <li><a target="_blank"
-                            href="https://zaverukha.com/imaria-%D0%B0%D0%BA%D0%B0%D0%B4%D0%B5%D0%BC%D1%96%D1%8F/">Навчання</a>
-                    </li>
-                    <li><a target="_blank" href="https://zaverukha.com/pipl-ua/">PIPL</a></li>
-                    <li><a target="_blank" href="https://www.instagram.com/imaria_space">Магазин</a></li>
-                    <li><a target="_blank"
-                            href="https://zaverukha.com/%D0%BC%D0%BE%D1%97-%D0%B1%D0%BB%D0%BE%D0%B3%D0%B8/">Блог</a>
-                    </li>
-                    <li><a target="_blank" href="https://zaverukha.com/%D0%BD%D0%BE%D0%B2%D0%B8%D0%BD%D0%B8/">Новини</a>
-                    </li>
-                    <li><a target="_blank"
-                            href="https://zaverukha.com/%D0%BA%D0%BE%D0%BD%D1%82%D0%B0%D0%BA%D1%82%D0%B8/">Контакти</a>
-                    </li>
-                </ul>
-            </nav>
-
-            <div class="header__lang">
-                <span>UA</span>
-            </div>
-        </div>
-    </header>
-
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container hero__inner">
-            <!-- Місце під зображення -->
-            <img src="./assets/img/logo3.png" alt="IMARIA logo" class="hero__logo" />
-
-            <!-- <h2 class="hero__subtitle">Безкоштовний Калькулятор для</h2> -->
-            <h1 class="hero__title">Безкоштовний калькулятор <span>для діагностики мапи долі в межах</span>
-                аналітично-нумерологічної системи діагностики долі “Путь Душі” (Way of the Soul)
-                в традиції IMARIA®
-
-            </h1>
-
-            <h2 class="hero__subtitle2">© Ірина Заверуха, 2026</h2>
-
-            <!-- <h1 class="hero__title">Аналітично-нумерологічна система діагностики долі "Путь Душі" (Way of the Soul) в
-                традиції IMARIA</h1> -->
-
-            <!-- <p class="hero__text">
-                Досліджуйте енергетичну структуру та налаштовуйтесь на глибинні рівні сприйняття реальності.<br>
-                Введіть дані та отримаєте доступ до унікальної системи аналізу!
-            </p> -->
-
-            <form id="calcForm" class="form">
-                <div class="form__group">
-                    <!-- <input type="text" id="name" name="name" placeholder="Введіть ім’я" required /> -->
-                    <!-- <label for="name">Ім’я *</label> -->
-                    <label for="name">Ім’я</label>
-                    <input type="text" id="name" name="name" placeholder="Введіть ім’я" />
-                    <small class="error" id="nameError"></small>
-                </div>
-
-                <div class="form__group">
-                    <label for="birthdate">Дата народження *</label>
-                    <input type="text" id="birthdate" name="birthdate" placeholder="дд.мм.рррр"
-                        pattern="\d{2}\.\d{2}\.\d{4}" inputmode="numeric" required />
-
-                    <small class="error" id="dateError"></small>
-                </div>
-
-                <button type="submit" id="submitBtn" disabled>Розрахувати</button>
-            </form>
-        </div>
-    </section>
-
-
-
-    <div class="main-wrapper">
-        <h2 id="main-wrapper_h2">ВАШ РОЗРАХУНОК</h2>
-
-        <div class="main-wrapper_container">
-
-            <section id="results" class="results">
-                <div class="container results_content">
-                    <div class="results_content_matrix_wrapper">
-                        <div id="resultsContent"></div>
-                        <img class="results_content_matrix" src="./assets/img/matrix.png" alt="matrix">
-
-                    </div>
-                </div>
-            </section>
-
-            <section id="health_card" class="health_card">
-                <div class="container health_card_wrapper">
-                    <h2>Карта здоров&#39;я</h2>
-                    <div id="healthCardResults">
-                        <!-- <div id="sahasrara1" class="">2</div>
-                        <div id="sahasrara2" class="">5</div>
-                        <div id="sahasrara3" class="">22</div>
-
-                        <div id="ajna1" class="">22</div>
-                        <div id="ajna2" class="">22</div>
-                        <div id="ajna3" class="">22</div>
-
-                        <div id="vishuddha1" class="">22</div>
-                        <div id="vishuddha2" class="">22</div>
-                        <div id="vishuddha3" class="">22</div>
-
-                        <div id="anahata1" class="">22</div>
-                        <div id="anahata2" class="">22</div>
-                        <div id="anahata3" class="">22</div>
-
-                        <div id="manipur1" class="">22</div>
-                        <div id="manipur2" class="">22</div>
-                        <div id="manipur3" class="">22</div>
-
-                        <div id="svadhisthana1" class="">22</div>
-                        <div id="svadhisthana2" class="">22</div>
-                        <div id="svadhisthana3" class="">22</div>
-
-                        <div id="muladhara1" class="">22</div>
-                        <div id="muladhara2" class="">22</div>
-                        <div id="muladhara3" class="">22</div>
-
-                        <div id="sum1" class="">22</div>
-                        <div id="sum2" class="">22</div>
-                        <div id="sum3" class="">22</div> -->
-                    </div>
-                    <!-- <img src="./assets/img/health.png" class="health_card_wrapper_img" alt="health_card"> -->
-                    <picture>
-                        <!-- Якщо екран до 1080px -->
-                        <source srcset="./assets/img/health-mob.jpg" media="(max-width: 1080px)">
-                        <!-- За замовчуванням -->
-                        <img src="./assets/img/health.png" alt="health_card" class="health_card_wrapper_img">
-                    </picture>
-                </div>
-            </section>
-        </div>
-    </div>
-
-
-
-
-    <section class="life-map">
-        <div class="container life-map_wrapper">
-            <h2 class="life-map__title">Карта Життя</h2>
-
-            <div class="life-map__grid" id="lifeMapGrid">
-                <!-- Блок 1 -->
-                <div class="life-map__block">
-                    <div class="life-map__header">
-                        <span class="life-map__circle" id="circle3"></span>
-                        <p>1. Пошук Себе. Діалог внутрішньої дитини </br>
-                            <span>Небесне призначення + Земне призначення</span>
-                        </p>
-                    </div>
-                    <div class="block-list">
-                        <ul class="life-map__list">
-                            <li><span class="life-map__circle" id="circle1"></span> Небесне призначення</li>
-                            <li><span class="life-map__circle" id="circle2"></span> Земне призначення</li>
-                        </ul>
-                    </div>
-
-                </div>
-
-                <!-- Блок 2 -->
-                <div class="life-map__block">
-                    <div class="life-map__header">
-                        <span class="life-map__circle" id="circle6"></span>
-                        <p>2. Соціалізація. </br> Діалог між мужністю і жіночістю </br>
-                            <span>Призначення мужності + Призначення жіночності</span>
-                        </p>
-                    </div>
-                    <div class="block-list">
-                        <ul class="life-map__list">
-                            <li><span class="life-map__circle" id="circle4"></span> Призначення мужності</li>
-                            <li><span class="life-map__circle" id="circle5"></span> Призначення жіночності</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Блок 3 -->
-                <div class="life-map__block">
-                    <div class="life-map__header">
-                        <span class="life-map__circle" id="circle9"></span>
-                        <p>3. Духовна грамотність </br>
-                            <span>1. Пошук себе + 2. Соціалізація</span>
-                        </p>
-                    </div>
-
-                    <div class="block-list">
-                        <ul class="life-map__list">
-                            <ul class="life-map__list">
-                                <li><span class="life-map__circle" id="circle7"></span> Особисте призначення
-                                    &nbsp;&nbsp;1. Пошук себе</li>
-                                <li><span class="life-map__circle" id="circle8"></span> Соціальне призначення
-                                    &nbsp;&nbsp;2. Соціалізація</li>
-                            </ul>
-                        </ul>
-                    </div>
-                </div>
-
-
-                <!-- Блок 4 -->
-                <div class="life-map__block">
-                    <div class="life-map__header">
-                        <span class="life-map__circle" id="circle12"></span>
-                        <p>4. Діалог галактичної душі </br>
-                            <span>2. Соціалізація + 3. Духовна грамотність</span>
-                        </p>
-                    </div>
-
-                    <div class="block-list">
-                        <ul class="life-map__list">
-                            <ul class="life-map__list">
-                                <li><span class="life-map__circle" id="circle10"></span> Соціальне призначення
-                                    &nbsp;&nbsp;1. Соціалізація</li>
-                                <li><span class="life-map__circle" id="circle11"></span> Духовне призначення
-                                    &nbsp;&nbsp;3. Духовна грамотність</li>
-                            </ul>
-                        </ul>
-                    </div>
-
-
-                </div>
-            </div>
-
-            <!-- Алмаз душі -->
-            <div class="life-map__diamond">
-                <div class="life-map__diamond_col1">
-                    <img src="/assets/img/diamond.png" alt="diamond">
-                </div>
-                <div class="life-map__diamond_col2">
-                    <h3>ВАШ АЛМАЗ ДУШІ</h3>
-                    <span id="diamondSoul"></span>
-                </div>
-            </div>
-
-            <div class="brand-code">
-                <h3>КОД ОСОБИСТОГО БРЕНДУ</h3>
-                <div class="circle" id="brandCodeCircle"></div>
-            </div>
-
-            <div class="description-result">
-                <p>
-                    Якщо Ви хочете дізнатись, що означає Ваш результат, перейдіть за посиланням
-                </p>
-                <a target="_blank" class="consultation-button"
-                    href="https://zaverukha.com/%D0%B2%D0%B0%D1%80%D1%82%D1%96%D1%81%D1%82%D1%8C-%D0%BF%D0%BE%D1%81%D0%BB%D1%83%D0%B3/">
-                    <span class="text">ПОДИВИТИСЬ ЗНАЧЕННЯ</span>
-                </a>
-            </div>
-
-
-            <p class="life-map__description">
-                Зверніть увагу, на персональній консультації зі спеціалістом методу “Путь Душі” (Way of the Soul) Ви
-                також можете отримати відповіді на питання:
-            </p>
-            <ul class="life-map__description_ul">
-                <li>Три пожиттєві відповідальності перед родом і планетою (фізична, емоційна, ментальна/еволюційна)
-                </li>
-                <li>Причини зайвої ваги та гормональних дисбалансів
-                </li>
-                <li>Код привабливості
-                </li>
-                <li>Код процвітання</li>
-                <li>Задачі стосунків між партнерами(глибинний розбір)</li>
-                <li>Код токсичних стосунків</li>
-                <li>Вібраційний ключ для покращення звязку з материальними ресурсами
-                </li>
-                <li>Вібраційний ключ для відновлення фізичного і психічного здоров’я
-                </li>
-                <li>Дари Душі </li>
-                <li>Ключ служіння</li>
-                <li>Путь проявлення і цілісної самореалізації</li>
-                <li>Хілерські позиції та методи корекції станів</li>
-                <li>та багато іншого для вашої трансформації.</li>
-            </ul>
-
-
-            <!-- Опис -->
-            <!-- <p class="life-map__description">
-                Зверніться до сертифікованого професіонала – IMARIA MASTER або ментора Академії для глибокого аналізу
-                вашого життєвого шляху за системою «Путь Душі». Ви дізнаєтесь свій код особистого бренду, три пожиттєві
-                відповідальності перед Планетою, своє призначення в стосунках, ключові задачі та ваші успішні види
-                самореалізації в новому часі. Крім того, зможете опрацювати будь-які запити та знайти гармонійні рішення
-                для свого життя.
-            </p> -->
-        </div>
-    </section>
-
-
-    <section id="consultation-section">
-
-        <!-- <div class="consultation-1 container">
-            <h2 class="consultation-1_h2">Консультація від IMARIA MASTER</h2>
-            <div class="consultation-1_p">
-                <p>За аналітично-нумерологічною системою «ПУТЬ ДУШІ» ви дізнаєтесь свій код особистого
-                    бренду, три пожиттєві відповідальності перед Планетою, своє призначення в стосунках,
-                    ключові задачі та ваші успішні види самореалізації в новому часі.
-                </p>
-                <p>
-                    Зрозумієте, як розкрити свій потенціал та як використовувати отриману інформацію для
-                    особистого та духовного розвитку. Крім того, зможете опрацювати будь-які запити та знайти
-                    гармонійні рішення для свого життя.
-                </p>
-                <p>
-                    Для глибокого аналізу вашого життєвого шляху за системою «Путь Душі» зверніться до
-                    сертифікованого професіонала – IMARIA MASTER або ментора Академії.
-                </p>
-
-            </div>
-        </div> -->
-
-        <!-- <div class="consultation-1 container">
-            <p>Залишились питання або помітили помилку? </br>
-                Напишіть, будь ласка, до команди турботи.
-            </p>
-            <a target="_blank" href="https://t.me/pipl_platform_bot?start=support">Команда турботи</a>
-        </div> -->
-
-
-        <div class="consultation-2">
-            <h2 class="consultation-title">Консультація від IMARIA MASTER</h2>
-
-            <div class="consultation-2_content-and-photo">
-                <div class="consultation-photo">
-                    <img src="./assets/img/p1.jpg" alt="Консультація">
-                </div>
-
-
-                <div class="consultation_content">
-                    <!-- <p class="consultation-description">
-                        Щоб по-справжньому розкрити свій потенціал та зрозуміти, як використовувати отриману інформацію
-                        для
-                        особистого та духовного розвитку, запишіться на консультацію.
-                    </p> -->
-
-                    <!-- <p class="consultation-subtitle">
-                        <strong>Консультація від IMARIA MASTER – Ірини Заверухи</strong> 
-                    </p> -->
-                    <p class="consultation-subtitle2">
-                        Запишіться на персональну консультацію до Ірини Заверухи Grand Master IMARIA®, авторки
-                        Аналітично-нумерологічної системи діагностики долі “Путь Душі” (Way of the Soul).
-
-                    </p>
-
-                    <!-- <ul class="consultation-list">
-                        <li>Розшифрувати енергетичний код вашої душі та знайти шлях до вищої свідомості.</li>
-                        <li>Визначити ключові кармічні задачі та духовні уроки вашого втілення.</li>
-                        <li>Отримати персональні рекомендації щодо активації енергій та ключів.</li>
-                        <li>Виробити унікальну стратегію розвитку ваших здібностей у сфері хілінгу.</li>
-                    </ul> -->
-
-                    <a target="_blank" class="consultation-button"
-                        href="https://zaverukha.com/%D0%B2%D0%B0%D1%80%D1%82%D1%96%D1%81%D1%82%D1%8C-%D0%BF%D0%BE%D1%81%D0%BB%D1%83%D0%B3/">
-                        <span class="text">ДІЗНАТИСЯ ДЕТАЛІ</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-
-    </section>
-
-
-    <section class="mentors">
+    <main class="hero-section">
         <div class="container">
-            <div class="mentors__content">
-                <!-- <h2 class="mentors__title">Консультація від менторів Академії</h2> -->
-                <!-- <p class="mentors__text"> Наставники Академії – це досвідчені хілери та духовні провідники, які
-                    допоможуть вам глибше зрозуміти свою Матрицю та застосувати її знання у житті. Консультація з
-                    ментором допоможе: </p>
-                <ul class="mentors__list">
-                    <li>Гармонізувати власну енергетику та налаштуватися на високі вібрації.</li>
-                    <li>Оволодіти методи роботи зі своїм енергетичним полем.</li>
-                    <li>Отримати рекомендації щодо подальшого розвитку у сфері духовних практик.</li>
-                </ul>  -->
-                <p class="mentors__text">
-                    Ви можете записатись на персональну консультацію до будь - кого з сертифікаційних консультантів
-                    аналітично-нумерологічної системи діагностики долі “Путь Душі” (Way of the Soul).
+            <div class="card-container">
+                <img class="hero_img" src="/assets/001.webp" alt="hero">
+            </div>
 
-                </p>
-                <a target="_blank" class="mentors__btn"
-                    href="https://pipl.net.ua/imaria-academia-certified-masters">ДІЗНАТИСЯ ДЕТАЛІ</a>
+            <div class="info">
+                <h1>Курс &laquo;Шлях Таро&raquo;</h1>
+                <h2><span class="span_h2">Перетворіть</span> карти Таро </br> <span class="span_h2">на свій</span>
+                    внутрішній компас <span class="span_h2">та</span> інструмент трансформації</h2>
+                <p>Припиніть вгадувати — почніть бачити! Пройдіть шлях від новачка до майстра, який розуміє
+                    причинно-наслідкові зв'язки подій. Навчіться чути свою інтуїцію через стародавню систему арканів на
+                    курсі «Шлях Таро».</p>
+
+
+                <button class="pay-button" onclick="buyCourse()">
+                    <img class="pay-button_img" src="/assets/icon1.png" alt="icon1">
+                    Придбати курс за <span class="pay-button_span2">2999</span><span class="pay-button_span1">грн</span>
+                </button>
+
+
+
+                <img id="icon01" src="/assets/icons/03.png" alt="icon01">
+                <img id="icon02" src="/assets/icons/02.png" alt="icon02">
+                <!-- <img id="icon03" src="/assets/icons/05.png" alt="icon03"> -->
             </div>
-            <div class="mentors__photos">
-                <div class="mentors__photo"><img src="./assets/img/m5.png" alt="mentor"></div>
-            </div>
+
+
         </div>
-    </section>
+    </main>
 
 
+    <script>
+        async function buyCourse() {
+            try {
+                const res = await fetch(
+                    "https://createpayment-dwtlhl22ra-uc.a.run.app",
+                    {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                    }
+                );
 
-    <footer class="footer">
-        <div class="footer__bg">
-            <div class="container">
+                const data = await res.json();
 
-                <div class="footer__left">
-                    <div class="footer__logo">
-                        <img src="./assets/img/logo3.png" alt="IMARIA">
-                    </div>
-                    <div class="footer__text">
-                        <div class="phone">
-                            +38 (093) 369 30 14
-                        </div>
-                        <div class="email">
-                            zaverukha.com@gmail.com
-                        </div>
-                        <a target="_blank" href="https://t.me/pipl_platform_bot?start=support">КОМАНДА ТУРБОТИ</a>
+                if (!data.checkoutUrl) {
+                    alert("Помилка створення платежу");
+                    return;
+                }
 
-                    </div>
-                </div>
+                const form = document.createElement("form");
+                form.method = "POST";
+                form.action = data.checkoutUrl;
 
-                <div class="footer__right">
-                    <h2>IMARIA ACADEMIA</h2>
-                    <p>Еволюційний освітній простір для тих, хто шукає фундаментальні сакральні знання, глибинні
-                        практики живого життя, а також методи енерго-інформаційного (вібраційного) хілінгу.</p>
+                for (const key in data.paymentData) {
+                    const input = document.createElement("input");
+                    input.type = "hidden";
+                    input.name = key;
+                    input.value = Array.isArray(data.paymentData[key])
+                        ? data.paymentData[key].join(";")
+                        : data.paymentData[key];
+                    form.appendChild(input);
+                }
 
-                    <a class="footer__right_btn" target="_blank" href="https://pipl.net.ua/imaria_academia">ДІЗНАТИСЯ
-                        БІЛЬШЕ</a>
-
-                    <div class="socials">
-                        <a target="_blank" href="https://t.me/ZaverukhaIrina"><img src="./assets/img/icons/21.png"></a>
-                        <a target="_blank" href="https://www.facebook.com/zaverukhairyna"><img
-                                src="./assets/img/icons/23.png"></a>
-                        <a target="_blank" href="https://www.instagram.com/zaverukhairyna"><img
-                                src="./assets/img/icons/22.png"></a>
-                        <a target="_blank" href="https://www.youtube.com/channel/UCz9oI1MnVkUTH_MCchtZDuA"><img
-                                src="./assets/img/icons/24.png"></a>
-                    </div>
-                </div>
-
-
-            </div>
-            <div class="container footer-container2">
-                <div class="left">©2017-2026 Заверуха Ірина. All Rights Reserved.</div>
-                <div class="right">
-                    <a target="_blank"
-                        href="https://zaverukha.com/%d0%bf%d0%be%d0%bb%d1%96%d1%82%d0%b8%d0%ba%d0%b0-%d0%ba%d0%be%d0%bd%d1%84%d1%96%d0%b4%d0%b5%d0%bd%d1%86%d1%96%d0%b9%d0%bd%d0%be%d1%81%d1%82%d1%96/">Політика
-                        конфіденційності</a>
-                    <a target="_blank"
-                        href="https://zaverukha.com/%d0%b4%d0%be%d0%b3%d0%be%d0%b2%d1%96%d1%80-%d0%bd%d0%b0%d0%b4%d0%b0%d0%bd%d0%bd%d1%8f-%d0%bf%d0%be%d1%81%d0%bb%d1%83%d0%b3/">Довір
-                        публічної оферти</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-
-
-
-
-    <script src="./js/index.js"></script>
-
+                document.body.appendChild(form);
+                form.submit();
+            } catch (e) {
+                console.error(e);
+                alert("Помилка з'єднання з сервером");
+            }
+        }
+    </script>
 </body>
 
 </html>
